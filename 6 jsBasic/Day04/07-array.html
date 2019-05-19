@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+    /*
+	1.创建一个数组，该数组保存3名学员的姓名
+	2.再创建一个数组，该数组保存3名学员的年龄
+	3.在控制台，分别打印输出数组中的值。
+	*/
+	var unames=["Tom","lucy","lilei"];
+	var uage=new Array(18,20,19);
+
+	unames[1]="林黛玉";
+	unames[3]="贾宝玉";
+	unames[5]="刘姥姥";  //稀疏数组
+
+
+	console.log(uage);
+	//获取unames数组中第3个元素并打印在控制台
+    console.log("unames数组中第三个元素："+unames[2]);
+	//获取unames数组的长度，并打印在控制台
+	var len=unames.length;
+	console.log("数组一共有"+len+"个元素");
+	unames[len]="孙悟空";
+
+	console.log(unames);
+     
+    for(var i=0;i<=unames.length-1;i++){
+	     console.log(unames[i]);
+	}
+
+  </script>
+ </body>
+</html>

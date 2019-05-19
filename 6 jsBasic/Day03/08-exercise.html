@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	 以下数列（斐波拉契数列）
+     1,1,2,3,5,8,13,21,34,55......
+	 通过f(n)计算数列中第n个数字的值。
+	 已知：
+	   该数列中第一个数和第二个数都是1。
+	   从第三个数开始，每个数字都是前两个数字的和。
+	   f(1)=1
+	   f(2)=1
+	   f(3)=f(2)+f(1)
+	   f(4)=f(3)+f(2)
+	   ...
+	   f(n)=f(n-1)+f(n-2)
+	  */
+	  function f(n){
+	     //如果n==1或n==2，结果为1
+		 //否则f(n)=f(n-1)+f(n-2)
+		/*if(n==1||n==2){
+		    return 1;
+		 }else{
+		   return f(n-1)+f(n-2);
+		 }*/
+		return (n==1||n==2)?1:(f(n-1)+f(n-2));
+	  }
+	  function testF(){
+	     var result=f(30);
+		 console.log(result);
+	  }
+	  testF();
+	</script>
+ </body>
+</html>

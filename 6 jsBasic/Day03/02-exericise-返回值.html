@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	   //带三个参数，返回三个数字的和
+	   function sum(a,b,c){
+	     return a+b+c;
+	   }
+	   var num=sum(15,16,17);
+	   console.log(num);
+       //练习：定义带三个参数的函数，函数体内返回三个数字中最大的数字。
+	     
+	   function getMax(a,b,c){
+	      //1.声明一个变量max用来表示三个数字中最大值，并将a的值先赋值给max
+		  var max=a;
+		  //2. 将b与max比较，如果b比max大，则将b的值赋值给max
+		  max=b>max?b:max;
+		  //3.将c与max比较，如果c比max大，则c赋值给max
+		  max=c>max?c:max;
+		  return max;
+	   }
+      var result=getMax(98,86,101);
+	  console.log(result);
+
+
+	</script>
+ </body>
+</html>

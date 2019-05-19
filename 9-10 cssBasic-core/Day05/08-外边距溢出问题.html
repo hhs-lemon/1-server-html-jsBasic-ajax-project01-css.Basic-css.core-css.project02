@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+    #d2,#d1{
+	  width:200px;
+	  height:200px;
+
+	}
+	#d1{
+	  background:red;
+	}
+	#d2{
+	  background:blue;
+	}
+	#d3{
+	  width:100px;
+	  height:100px;
+	  background:yellow;
+	  margin-top:50px;
+	}
+	#d2:before{
+	   content:"";
+	   display:table;
+	}
+  </style>
+ </head>
+ <body>
+    <div id="d1"></div>
+	<div id="d2">
+	  <div id="d3"></div>
+	</div>
+ </body>
+</html>
+<!-- 
+外边距溢出问题：
+分析：看布局——d3外边距不要溢出父d2：在父d2前用css的方式加空table标签
+#d2:before{
+	   content:"";
+	   display:table;
+	}
+ -->

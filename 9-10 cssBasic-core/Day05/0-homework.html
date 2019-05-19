@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>banner</title>
+  <style>
+    ul{
+	  list-style:none;
+	  margin:0;
+	  padding:0;
+	}
+    #banner{
+	  width:960px;
+	  height:380px;
+	  margin:0 auto;
+	  overflow:hidden;
+	  position:relative;
+	  //并列关系：可重叠：相对定位配合 绝对定位的偏移使用
+	}
+	#banner ul.banner-img img{
+	  width:960px;
+	}
+    #banner ul.banner-img li{
+	   float:left;
+	}
+	
+	a.ck-side{
+	  width:35px;
+	  height:70px;
+	  border-radius:5px;
+	  position:absolute;
+	  top:155px;
+	}
+	a.ck-left{
+	  background:#ddd url(index/arrow-left.png) no-repeat center center;
+	  left:5px;
+	}
+	a.ck-right{
+	  background:#ddd url(index/arrow-right.png) no-repeat center center;
+	  right:5px;
+	}
+    #banner ul.ind{
+	   position:absolute;
+	   bottom:20px;
+	   left:450px;
+	}
+	#banner ul.ind li{
+	  float:left;
+	  width:10px;
+	  height:10px;
+	  background:#fff;
+      border-radius:50%;
+	  margin-right:5px;
+	}
+	#banner ul.ind li.active{
+	  background:#0aa1ed;
+	}
+  </style>
+ </head>
+ <body>
+     <div id="banner">
+	    <!--1.大图的显示-->
+		<ul class="banner-img">
+		  <li>
+		    <a href="#">
+			  <img src="index/banner1.png">
+			</a>
+		  </li>
+		  <li>
+		    <a href="#">
+			  <img src="index/banner2.png">
+			</a>
+		  </li>
+		  <li>
+		    <a href="#">
+			  <img src="index/banner3.png">
+			</a>
+		  </li>
+		  <li>
+		    <a href="#">
+			  <img src="index/banner4.png">
+			</a>
+		  </li>
+		</ul>
+		<!--2.左右箭头按钮-->
+		<a href="#" class="ck-left ck-side"></a>
+		<a href="#" class="ck-right ck-side"></a>
+		<!--3. 4个圆点指示器-->
+        <ul class="ind">
+		   <li class="active"></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		</ul>
+	 </div>
+ </body>
+</html>
+<!-- 
+用定位做轮播页面（原始，静态）
+布局：1包3布局：div包——ul>li*4图 2a箭头 ul>li*4圆点
+思想：大+1+2定位思想：大div相对定位 后2元素绝对定位(图不定位、箭头、小圆点)
+
+大div：定宽高 自动居中 相对定位 溢出hidden
+ul: 样式无 内外距0（img：宽度960）
+li：左浮
+a： 绝对定位 宽高 下偏
+左a：左偏 左背景图：颜色 url 不平铺 中 中;
+右a：右偏 右背景图：颜色 url 不平铺 中 中;
+ul：绝对定位 上偏 右偏
+li：左移 宽高 倒角 背景 右外距 另设.active时背景
+
+
+
+ -->

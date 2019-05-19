@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <script>
+	   /*
+	    练习：使用数组实现以下图像：
+       *
+       **
+       ***
+       ****
+       *****
+	   */
+	 //方式一:
+    /* function printTri(){
+	  for(var i=1i<=5;i++){
+		var arr=[];
+		    for(j=1;j<=i;j++){
+			   arr[arr.length]="*";
+			}
+			console.log(arr.join(""));
+		 } 
+	   }*/
+	//方式二  
+	function printTri(){
+	   for(var i=1,arr=[];i<=5;i++,arr.length=0){
+		    for(j=1;j<=i;j++){
+			   arr[arr.length]="*";
+			}
+			console.log(arr.join(""));
+		 } 
+	   }
+	   printTri();
+	 //练习：使用数组完成99乘法表的拼接
+  function printNine(){
+	for(var i=1,arr=[];i<=9;i++,arr.length=0){
+		  for(var j=1;j<=i;j++){
+		    arr[arr.length]=j+"*"+i+"="+(j*i);
+		   }
+		   console.log(arr.join("\t"));
+	 }
+  }
+	 printNine();
+
+	 </script>
+ </body>
+</html>

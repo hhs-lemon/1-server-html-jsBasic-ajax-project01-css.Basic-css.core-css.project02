@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+    /*
+	   通过兄弟选择器设置以下样式
+       1.h3与div之间有30px的外边距；
+	   2.从第二个div开始，每个div都有10px的上外边距。
+	*/
+	h3+div{	/**/
+	  margin-top:30px;
+	}
+    div~div{	/*平级的所有div*/
+	  margin-top:10px;
+	}
+  </style>
+ </head>
+ <body>
+      <h3>静夜思</h3>
+	  <div>窗前明月光</div>
+	  <div>疑是地上霜</div>
+	  <div>举头望明月</div>
+	  <div>低头思故乡</div>
+ </body>
+</html>
+<!-- 
++：h3+div：挨在某元素后的一个兄弟
+~：div~div：某元素后所有满足条件的兄弟
+ -->

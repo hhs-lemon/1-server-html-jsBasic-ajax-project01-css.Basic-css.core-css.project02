@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+     div{
+	   width:200px;
+	   height:200px;
+	   position:absolute;
+	   top:0;
+	   left:0;
+	 }
+	 #d1{
+	   background:yellow;
+       transform:rotate(45deg) translate(50px);
+	 }
+	 #d2{
+	   background:#f00;
+	   opacity:.5;
+	   /*transform:translate(100px);*/
+	   transform:translate(50px) rotate(45deg);
+	 }
+	 #d2:hover{
+	   /*transform:scaleX(1.5);*/
+	   /*transform-origin:top left;
+	   transform:rotate(45deg);*/
+	 }
+  </style>
+ </head>
+ <body>
+   <div id="d1">参考元素</div>
+   <div id="d2">转换元素</div>
+ </body>
+</html>
+<!--  
+转的是轴（位移和旋转的先后不同——最后位置不同）
+
+ transform:rotate(45deg) translate(50px);
+ 解析：转换:角度() 位移(x,y)
+ -->

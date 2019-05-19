@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <div id="show">这是原来的内容</div>
+
+	<input type="button" value="发送请求" onclick="loadMsg()">
+    <script>
+	  /*
+	 1.创建一个response.php,响应输出一句话“我的AJAX练习”。
+     2.创建ajax-exercise.html,在网页中添加一个按钮和div（id="show"）。
+     3.单击按钮时，异步的向response.php发送请求，并将响应回来的数据以h1的方式显示在div中。
+	  */
+    function loadMsg(){
+	   //1.创建异步xhr
+	    var xhr=createXhr();
+
+	   //2.监听事件
+	    xhr.onreadystatechange=function(){
+		   if(xhr.readyState==4&&xhr.status==200){
+		      var str=xhr.responseText;
+			 // console.log(str);
+              $("show").innerHTML="<h1>"+str+"</h1>";
+		   }
+		}
+	  //3.打开连接
+	   xhr.open("get","04-response.php",true);
+	  //4.发送请求
+	   xhr.send(null);
+	}
+
+	</script>
+	<script src="js/common.js"></script>
+ </body>
+</html>

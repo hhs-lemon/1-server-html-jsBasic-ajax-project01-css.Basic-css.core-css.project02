@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+   <script>
+	
+	function calculate(a,b){
+      var num1=a+b;
+	  console.log(num1);
+	}
+	console.log(num1);
+
+	function showMsg(brother,sister){
+	   console.log("哥哥是："+brother);
+	   console.log("妹妹是："+sister);
+	}
+
+	var num=parseInt(35.8);
+
+    console.log(num);
+	function showNum(){
+	  console.log("这是在函数体内调用变量num:"+num);
+	}
+showNum();
+   </script>
+   <input type="button" value="计算乘积" onclick="calculate(20,10)">
+   <input type="button" value="打印信息" onclick="showMsg('薛蟠','薛宝钗')">
+ </body>
+</html>

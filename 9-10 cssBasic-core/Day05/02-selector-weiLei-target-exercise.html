@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #show{
+        width:165px;
+        height:175px;
+        border:1px solid #ddd;
+        padding:20px;
+      }
+      #show img{
+        display:none;
+      }
+      #show img:target{ /*点到锚点也相当于对应id触发target事件*/
+        display:block;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <a href="#img1">图片1</a>
+      <a href="#img2">图片2</a>
+      <a href="#img3">图片3</a>
+    </p>
+    <div id="show">
+      <img id="img1" src="index/index_hot_food_img1.png">
+      <img id="img2" src="index/index_hot_food_img2.png">
+      <img id="img3" src="index/index_hot_food_img3.png">
+    </div>
+  </body>
+</html>
+<!-- 
+实现路径（css锚点点击记录）：点击锚点——元素——默认元素触发target——显示target对应样式
+布局：p>a*3 div>img*3
+1.a：设锚点 href="#img1"
+2.img：设id id="img1"
+3.css显示元素：img:target{
+        display:block;
+      }
+ -->

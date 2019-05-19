@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	   从弹出框中输入1-7的数字，数字分别代表周一到周日，
+       输入1：打印输出“周一吃红烧肉”
+       2：“周二吃红烧排骨”
+       3：“周三吃红烧丸子”
+       4：“周四吃红烧茄子”
+       5：“周五吃红烧带鱼”
+       6和7：“周末减肥”
+	  */
+
+	  function shoeM(){
+	    var day=Number(prompt("请输入1-7的数字"));
+		if(day===1){
+		   console.log("周一吃红烧肉");
+		}else if(day===2){
+		   console.log("周二吃红烧排骨");
+		}else if(day===3){
+		   console.log("周三吃红烧丸子");
+		}else if(day===4){
+		  console.log("周四吃红烧茄子");
+		}else if(day===5){
+		  console.log("周五吃红烧带鱼");
+		}else{
+		  console.log("减肥");
+		}
+	  }
+	  //shoeM();
+	  //改版上面练习：用switch...case
+	  function showMenu(){
+	    var num=Number(prompt("请输入1-7的数字："));
+        switch(num){
+		   case 1:
+              console.log("周一吃红烧肉");
+			  break;
+		   case 2:
+		      console.log("周二吃红烧排骨");
+			  break;
+		   case 3:
+		      console.log("周三吃红烧丸子");
+			  break;
+		   case 4:
+		      console.log("周四吃红烧茄子");
+			  break;
+		   case 5:
+		      console.log("周五吃红烧带鱼");
+			  break;
+		   case 6:
+		   case 7:
+		      console.log("减肥");
+			  break;
+		   default:
+		      console.log("喝西北风");
+			  break;
+		}
+	  }
+
+	  showMenu();
+
+	</script>
+ </body>
+</html>

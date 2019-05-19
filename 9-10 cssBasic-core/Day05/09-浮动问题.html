@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"> 
+  <title>Document</title>
+  <style>
+    #d2,#d3{
+	  width:200px;
+	  height:200px;
+	  background:red;
+	  float:left;
+	}
+	#d1{
+	  border:1px solid blue;
+	}
+	#d1:after{
+	  display:block;
+	  content:"";
+      clear:both;
+	}
+  </style>
+ </head>
+ <body>
+    <div id="d1">
+	  <div id="d2"></div>
+	  <div id="d3"></div>
+	  <!--<p style="clear:both;"></p>-->
+	</div>
+ </body>
+</html>
+<!-- 
+
+分析：父包浮动元素，父后加元素并样式清除浮动(clear:both;)
+css清除方法：用伪类悬着器加清除浮动的元素
+#d1:after{
+	  display:block;
+	  content:"";
+      clear:both;
+	}
+ -->

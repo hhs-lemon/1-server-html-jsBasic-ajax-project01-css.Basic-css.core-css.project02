@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <script>
+	   /*
+	     不停的从弹出框中录入员工姓名，将所有录入的姓名保存在一个数组中（names）,直到输入exit为止，在控制台打印数组中所有元素。
+	   */
+	   function printNames(){
+	     var names=[];
+		 while(true){
+		   //1.循环录入数据
+		   var input=prompt("请输入姓名：");
+		   if(input=="exit"){
+		     break;
+		   }
+           names[names.length]=input;
+		 }
+		 console.log(names);
+	   }
+	  // printNames();
+
+	   //练习：定义一个函数，声明一个整数数组，找出该数组中的最大值。
+       function findMax(){
+	      var nums=[102,52,99,76,8,17];
+		  //声明max,用于保存数组中的最大值，默认将数组的第一个元素赋值给max
+		  var max=nums[0];
+		  //2.从nums数组中依次取出每个元素跟max进行比较，比max大的话，将数值赋值给max
+		  for(var i=1;i<nums.length;i++){
+		      if(nums[i]>max){
+			     max=nums[i]; 
+			  }
+		  }
+		  console.log("该数组中最大值为："+max);
+	   }
+	   findMax();
+
+	 </script>
+ </body>
+</html>

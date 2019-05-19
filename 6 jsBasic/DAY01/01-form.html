@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <!--
+	  1.创建一个form表单
+	    在表单中创建一个用户名输入框和密码框，
+		点击提交按钮时将用户名和密码提交给user_login.php文件
+	 -->
+	 <form action="user_login.php" method="post" enctype="multipart/form-data">
+	   <fieldset>
+	     <legend>学员的基本信息</legend>
+	    <p>用户名称：
+		   <input type="text" name="uname">
+		</p>
+	    <p>
+		   用户密码：
+		   <input type="password" name="upwd">
+		</p>
+        <p>
+		  <input type="hidden" name="uid" value="1">
+		</p>
+		<p>
+		   用户性别：<input type="radio" name="gender" id="man">
+		   <label for="man">男</label>
+
+		   <input name="gender" type="radio" id="woman">
+		   <label for="woman">女</label>
+		</p>
+       </fieldset>
+        <!--练习：设置复选框选中效果，当点击复选框后面的文字时选中对应的复选按钮：
+		特长：琴，棋，书，画-->
+        用户特长：
+		 <input type="checkbox" id="q1" value="q1" name="TC">
+		 <label for="q1">琴</label>
+		 <input type="checkbox" id="q2" value="q2" name="TC">
+		 <label for="q2">棋</label>
+		 <input type="checkbox" id="q3" value="q3" name="TC">
+		 <label for="q3">书</label>
+		 <input type="checkbox" id="q4" value="q4" name="TC">
+		 <label for="q4">画</label>
+
+
+		<p>
+		  选择头像：<input type="file">
+		</p>
+		<p>
+		  自我介绍：<textarea name="intr" cols="20" rows="5" readonly>这是人很懒，什么都没留下......</textarea>
+		</p>
+        <p>
+		  工作城市：<select name="city" size="3" multiple>
+		     <option value="bj" selected>北京</option>
+			 <option value="tj">天津</option>
+			 <option value="bd">保定</option>
+			 <option value="wh">武汉</option>
+			 <option value="sh">上海</option>
+			 <option value="gz">广州</option>
+		  </select>
+		</p>
+		<!--增加选修课程的下拉列表，选项内容包含：韩语，阿拉伯语，舞蹈，体操，搏击，默认选中阿拉伯语-->
+		选修课程：<select name="">
+		   <option value="1">韩语</option>
+           <option value="2" selected>阿拉伯语</option>
+           <option value="3">舞蹈</option>
+           <option value="4">体操</option>
+           <option value="5">搏击</option>
+		</select>
+
+		<p><input type="submit" value="登录"></p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+	 </form>
+ </body>
+</html>

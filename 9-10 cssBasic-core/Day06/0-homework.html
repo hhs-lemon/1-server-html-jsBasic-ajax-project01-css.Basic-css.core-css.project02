@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    div.content{
+	   width:960px;
+	   margin:0 auto;
+	   display:flex;
+	   flex-wrap:wrap;
+	   justify-content:space-between;
+	}
+	div.content>div{
+	  background:#ddd;
+	  margin-bottom:10px;
+	}
+	div.content>div:nth-child(1){
+	  width:610px;
+	  height:370px;
+	  position:relative;
+	}
+	div.content>div:nth-child(2){
+	  width:340px;
+	  height:370px;
+	}
+	div.content>div:nth-child(3){
+	  width:360px;
+	  height:230px;
+	}
+	div.content>div.product{
+	  width:190px;
+	  height:230px;
+	}
+   /*第一块div中的具体内容样式*/
+   div.content div.desc p.name{
+     font-size:32px;
+	 color:#333;
+	 margin:0;
+   }
+   div.content p.details{
+     font-size:12px;
+	 margin-bottom:24px;
+	 color:#666;
+   }
+   div.content p.price{
+     font-size:24px;
+	 margin-bottom:12px;
+	 color:#0aa1ed;
+   }
+   div.content a.view{
+     display:block;
+	 width:130px;
+	 height:40px;
+	 background:linear-gradient(to bottom,#27b1f6 0%,#0aa1ed 100%);
+	 color:#fff;
+     text-align:center;
+	 line-height:40px;
+	 text-decoration:none;
+   }
+   div.content div.desc{
+     width:245px;
+	 position:absolute;
+	 top:55px;
+	 left:65px;
+   }
+   div.content div:nth-child(1) img{
+      position:absolute;
+	  top:56px;
+	  right:30px;
+   }
+  </style>
+ </head>
+ <body>
+    <div class="content">
+	   <div>
+	     <!--1.左侧文字-->
+	     <div class="desc">
+		    <p class="name">Apple MacBook Air系列</p>
+            <p class="details">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+			<p class="price">￥6988.00</p>
+			<a href="#" class="view">查看详情</a>
+		 </div>
+		 <!--2.右侧大图-->
+		 <img src="study_computer_img1.png">
+	   </div>
+	   <div></div>
+	   <div></div>
+	   <div class="product"></div>
+	   <div class="product"></div>
+	   <div class="product"></div>
+	</div> 
+ </body>
+</html>
+<!-- 
+布局：div>div*6>(img和)div>p*3和a
+
+div :弹性布局 属性
+
+div ：宽高 背景 相对定位
+
+img：url 绝对定位 偏移
+div：绝对定位
+
+p、a:属性
+ -->

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <script>
+	   /*
+	    循环从弹出框中录入信息，并且打印，直到输入exit为止。
+	   */
+       function printMsg(){
+	      while(true){
+		     var msg=prompt("请输入一段信息：");
+			 if(msg=="exit"){
+			   break;
+			 }else{
+			   console.log(msg);
+			 }
+		  }
+	   }
+	   printMsg();
+	 </script>
+ </body>
+</html>

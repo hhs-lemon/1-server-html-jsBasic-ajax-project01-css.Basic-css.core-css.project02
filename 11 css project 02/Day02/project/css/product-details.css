@@ -1,0 +1,31 @@
+/*面包屑导航*/
+#bread-crumb{
+  color:#333;
+  font-weight:bold;
+}
+#bread-crumb a{
+  color:#333;
+}
+/*详细内容整体布局*/
+#product-details{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+#view{
+  width:460px;
+  min-height:300px;
+  background:blue;
+}
+#show-details{
+ width:490px;
+ min-height:300px;
+ background:red;
+}
+#recommend{
+  width:100%;
+  margin-top:30px;
+  min-height:200px;
+  background:yellow;
+}

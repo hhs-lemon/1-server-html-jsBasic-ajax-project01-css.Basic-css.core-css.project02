@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	     创建一个函数avg(),接收三个参数，返回这三个数的平均值。
+	     要求：在avg()内部创建一个内部函数sum()用以计算所有数值的和。
+	  */
+	  function avg(num1,num2,num3){
+	     function sum(){
+		   return num1+num2+num3; //求和
+		 }
+		 var res=sum();
+		 return res/3;//返回平均值
+	  }
+	  var result=avg(50,40,60);
+	  console.log(result);
+
+	</script>
+ </body>
+</html>

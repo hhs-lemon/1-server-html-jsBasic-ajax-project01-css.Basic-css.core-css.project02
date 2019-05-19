@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+     div{
+	   width:200px;
+	   height:200px;
+	   position:absolute;
+	   top:0;
+	   left:0;
+	 }
+	 #d1{
+	   background:yellow;
+	 }
+	 #d2{
+	   background:#f00;
+	   opacity:.5;
+
+	 }
+	 #d2:hover{
+	    transform:skewX(-45deg);
+	 }
+  </style>
+ </head>
+ <body>
+   <div id="d1">参考元素</div>
+   <div id="d2">转换元素</div>
+ </body>
+</html>
+<!-- 
+transform:skewY(-45deg);
+转换：Y倾斜-45度
+ -->

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+     a:link{
+	   color:black;
+	   text-decoration:none;
+	 }
+	 a:hover{
+	   color:red;
+	 }
+	 a:active{
+	   color:orange;
+	 }
+	 a:visited{
+	   color:green;
+	 }
+
+	 input{
+	   color:gray;
+       font-style:italic;
+	 }
+	 input:active{
+	   font-style:normal;
+	 }
+	 input:focus{
+	   color:red;
+	 }
+	 #uname:focus{
+	   color:blue;
+	 }
+      
+     div p #s1{
+	   color:blue;
+	 }
+	
+	 #s1{
+	   color:red;
+	 }
+	
+  </style>
+ </head>
+ <body>
+    <!--
+	页面中新建一个a标记，增加以下样式：
+	   1.未被访问时颜色为黑色，没有下划线(text-decoration:none;)
+	   2.鼠标悬停时，文本颜色为红色
+	   3.被激活时，文本颜色为橙色
+	   4.访问后，颜色变为绿色
+	页面中增加一个input文本框，默认效果颜色为灰色，字体为斜体（font-style:italic;）
+	   1.被激活时，字体为非斜体（font-style:normal;）
+	   2.获取焦点时，文本颜色为红色。
+	-->
+	<a href="http://www.baidu.com">百度</a>
+	<br>
+	<input id="uname" type="text" value="dangdang">
+	<div>
+	  <p>
+	    <span id="s1">测试文本</span>
+	  </p>
+	</div>
+ </body>
+</html>

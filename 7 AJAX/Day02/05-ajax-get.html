@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+      用户名称：<input type="text" id="uname">
+      <br>
+	  <input type="button" value="提交" onclick="sendMsg()">
+	  <div id="d1"></div>
+    <script>
+	  /*
+	 1.创建一个ajax-get.html
+       添加一个文本框（id="uname"）
+       添加一个按钮，单击按钮时，将文本框中的数据作为参数，异步的提交给ajax-get.php文件，并且将响应的数据显示在一个div里。
+     2.创建ajax-get.php
+       接收前端传递过来的数据
+       将数据拼成“欢迎XXX”,再响应给浏览器。
+	  */
+	  function sendMsg(){
+	     //1.创建xhr
+		   var xhr=createXhr();
+		 //2.监听
+		  xhr.onreadystatechange=function(){
+		     if(xhr.readyState==4&&xhr.status==200){
+			    var res=xhr.responseText;
+				$("d1").innerHTML=res;
+			 }
+		  }
+	  //3.打开连接
+		  //获取用户名input输入框的值
+		var userName=$("uname").value;
+		//拼接url地址，实现传参
+    var url="05-ajax-get.php?uname="+userName;
+		  xhr.open("get",url,true);
+	//4.发送请求
+	    xhr.send(null);
+	  }
+	</script>
+	<script src="js/common.js"></script>
+ </body>
+</html>

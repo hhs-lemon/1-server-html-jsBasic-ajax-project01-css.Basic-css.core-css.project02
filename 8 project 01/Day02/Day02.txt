@@ -1,0 +1,62 @@
+1.什么是XML？
+  eXtensible Markup Language
+  可扩展的标记语言
+2.XML的语法规范
+  1.声明XML的格式
+    <?xml version="1.0" encoding="utf-8"?>
+  2.xml的标记语法规范
+    1.必须成对出现
+    2.必须严格区分大小写
+    3.可以嵌套
+    4.可以自定义属
+    性，但是属性值必须加"".
+    5.必须有根元素
+  3.解析XML文档对象的方法
+    document.getElementsByTagName("标签名称");
+    返回的类数组。
+  4.在php中响应回xml格式的字符串
+    必须设置消息头：
+      header("Content-Type:application/xml");
+ Project=================================
+ 1.查询用户表，将所有的数据展示如图所示
+   1.新建一个03-list.php文件，将用户表中所有的数据查询出来并以json字符串方式响应给前端。
+   2.新建一个03-list.html,当网页一加载时将用户数据以表格的方式展示在网页中。
+
+   <a href="http://www.baidu.com">百度</a>
+   a其它的表现形式：
+      1.href="#" 表示返回当前页面顶部
+      2.href="a.zip/b.rar" 下载资源
+      3.href="mailto:合法的邮箱地址" 打开电子邮件，新建邮件
+      4.href="javascript:js代码/js函数" 执行js代码
+ 2.删除用户数据，在03-list.html网页中点击列表中的删除链接，发送异步请求到04-deleteUser.php,并传递uid到php文件中。
+
+ 3.修改用户数据：
+   1.创建一个网页，保存成05-sel-update.php,在页面中（顶部）根据获取到的uid完成用户数据的查询。然后展示在表单控件中。 
+
+   2.创建06-update.php文件，在php中获取前端提交过来的所有数据，然后拼sql语句，根据uid完成用户信息的修改。
+   
+ 4.分页查询
+   第一页，显示10：
+     SELECT * FROM xz_user limit 0,10
+   第二页，显示5：
+     SELECT * FROM xz_user limit 5,5
+   第三页，显示5：
+     SELECT * FROM xz_user limit 10,5
+   问题：先得到每一页首条记录的下标
+         计算公式：（当前页-1）*条数
+   1.创建07-listPage.php
+     1.声明变量currentPage,表示当前页数
+       如果前端没传递过来currentPage的值，那么默认为1
+     2.声明变量pageSize，表示每一页显示的条数
+       如果前端没有传递pageSize的值，那么默认为10
+     3.根据pageSize和currentPage，来计算当前页显示首条记录的下标，将结果保存在$start中
+     。
+
+    2.根据pageSize和start到数据库中完成数据查询。
+  
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+1.DOM事件
+  1.select的onchange事件
+    当选项框中的内容发生改变时需要出发的事件。
+2.Ajax
+  1.名词解释
+    1.同步
+      在一个任务进行中，不能开启其它的任务。
+      同步访问：浏览器在向服务器发送请求时，浏览器只能等待服务器的响应，不能做其它的事情。
+      出现场合：
+         1.地址栏输入网址访问页面
+	 2.a标记的默认跳转
+	 3.submit按钮的表单提交
+    2.异步
+      在一个任务进行中时，可以开启其它的任务
+      浏览器在向服务器发送请求的时候，不耽误用户在网页中做其他的操作。
+      出现场合：
+         1.股票的走势图
+	 2.聊天室
+	 3.用户名验证
+	 4.建议搜索
+  2.什么是Ajax
+    1.Asynchronous Javascript And Xml
+      异步的         js        和 Xml
+    2.本质：使用js提供的异步对象（XMLHttpRequest）,异步的向服务器发送请求，并接收响应回来的数据（数据格式是Xml）。
+  3.异步请求的步骤
+    1.创建Ajax异步对象（xhr）
+    2.绑定事件
+    3.打开连接
+    4.发送请求
+  4.创建异步对象（xhr）
+    标准创建：var xhr=new XMLHttpRequest();
+    IE8以下浏览器：var xhr=new ActiveXObject("Microsoft.XMLHttp");
+    如何判断？
+      通过window.XMLHttpRequest来判断浏览器是否支持标准创建。如果浏览器不支持标准创建，那么window.XMLHttpRequest的值为null。
+    练习：
+      将创建xhr对象的方法封装到独立的js文件中。
+      要求：判断浏览器是否支持标准创建，如果支持返回标准创建的对象，否则返回IE8以下创建的对象。
+  5.异步对象xhr的常用属性和方法
+    1.readyState属性
+      作用：用于表示xhr对象的请求状态
+      值：
+        0：请求尚未初始化
+	1：已经打开到服务器的链接，正在发送请求中
+	2：接收响应头
+	3：接收响应主体
+	4：接收响应数据成功
+	注意：当readyState的值为4的时候，才表示所有的响应都已经接收完毕。
+    2.status属性
+      作用：表示的是服务器的响应状态码
+      值：200 响应成功
+      当status的值是200的时候，表示服务器已经正确的处理请求并给出了响应。
+    3.onreadystatechange-事件
+      作用：当xhr的readyState属性值发生改变时，要自动激发的操作。
+      语法：
+         xhr.onreadystatechange=function(){
+	     if(xhr.readyState==4&&xhr.status==200){
+	        var result=xhr.responseText;
+		console.log(result);
+	     }
+	 }
+  6.打开连接open()
+    作用：打开连接（创建请求）
+    语法：xhr.open(method,url,isAsyn);
+        method:请求的方法（get/post）
+	url:请求地址（ex:http://127.0.0.1/login.php）
+        isAsyn:指定采用同步还是异步发送请求（true:异步，false:同步）
+  7.send()
+    作用：发送请求
+    语法：xhr.send(请求主体);
+      如果请求方法是get,没有请求主体send(null)
+      如果请求方法是post,则send(主体数据)
+	 
+  练习：
+     1.创建一个response.php,响应输出一句话“我的AJAX练习”。
+     2.创建ajax-exercise.html,在网页中添加一个按钮和div（id="show"）。
+     3.单击按钮时，异步的向response.php发送请求，并将响应回来的数据以h1的方式显示在div中。
+3.使用get方法传参给服务端
+ ex:
+  user_login.php?uname=dangdang&upwd=123456
+  在php中：
+     $_REQUEST["uname"];
+     $_REQUEST["upwd"];
+
+  练习1：
+     1.创建一个ajax-get.html
+       添加一个文本框（id="uname"）
+       添加一个按钮，单击按钮时，将文本框中的数据作为参数，异步的提交给ajax-get.php文件，并且将响应的数据显示在一个div里。
+     2.创建ajax-get.php
+       接收前端传递过来的数据
+       将数据拼成“欢迎XXX”,再响应给浏览器。
+  练习2：
+     1.在练习1的基础上，将网页另存一份，然后在网页中添加一个密码框，将用户名和密码同时提交给服务端。
+     2.将练习1中的php文件另存一份，然后在php文件中同时接受前端传递过来的用户和密码，然后判断，如果用户名=dangdang,密码=123456，响应“登录成功”,否则“登录失败”。
+4.使用post方法提交数据
+  1.提交的数据需要放在send()主体位置处
+   ex： 
+   var msg="uname="+userName+"&upwd="+upwd;
+   xhr.send(msg);
+  2.设置请求的消息头
+    必须在发送请求之前设置消息头
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  
+  练习：
+    使用AJAX的post方式完成异步的注册：
+        1.创建一个register.html页面
+	  页面包含以下控件：
+	      uname-<input type="text">
+	      upwd-<input type="password">
+	      email-<input type="email">
+	      phone-<input type="text">
+	      user_name-<input type="text">
+	      gender-<select>
+	2.在页面中添加一个按钮，点击按钮时，使用post提交方式，异步的将数据发送给register.php文件，并且完成注册给出响应（注册成功/注册失败）。
+       
+      
+      

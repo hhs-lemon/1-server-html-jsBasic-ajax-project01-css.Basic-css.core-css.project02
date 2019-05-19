@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+     #container{
+	   border:1px solid red;
+	   display:flex;
+	   align-items:center;
+	   height:300px;
+	 }
+	 .c1,.c2,.c3{
+	   width:200px;
+	   height:200px;
+
+	 }
+	 .c1{
+	   background:red;
+	   order:3;		/*排列顺序*/
+	   flex-grow:5; /*空间足时可放大比例*/
+	   flex-shrink:3; /*空间不足时缩小比例*/
+	   align-self:flex-start; /*子的对齐方式*/
+	 }
+	 .c2{
+	   background:yellow;
+	   flex-grow:2;
+	 }
+	 .c3{
+	   background:blue;
+	 }
+  </style>
+ </head>
+ <body>
+    <div id="container">
+	   <div class="c1"></div>
+	   <div class="c2"></div>
+	   <div class="c3"></div>
+	</div>
+ </body>
+</html>
+<!-- 
+.c1{
+	   background:red;
+	   order:3;		/*排列顺序*/
+	   flex-grow:5; /*空间足时可放大比例*/
+	   flex-shrink:3; /*空间不足时缩小比例*/
+	   align-self:center; /*子的对齐方式*/
+	 }
+ -->

@@ -1,0 +1,206 @@
+#banner img{
+  width:960px;
+}
+/*商品列表整体布局*/
+#product-list{
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+}
+#pList{
+  width:740px;
+  min-height:200px;
+}
+#notice-board{
+  width:210px;
+}
+
+/*列表中具体样式*/
+#title{
+  height:38px;
+  line-height:38px;
+  background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+  font-size:16px;
+  color:#808080;
+  padding-left:20px;
+}
+#show-list{
+  background:#fff;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  padding:10px;
+}
+#show-list>li{
+ width:230px;
+ border:1px solid #f0f0f0;
+ padding:8px;
+ box-sizing:border-box;
+}
+#show-list>li img{
+  width:100%;
+  transition:all .5s linear;
+}
+#show-list>li img:hover{
+  transform:scale(1.1);
+}
+/*价格*/
+#show-list p.price{
+  color:#0aa1ed;
+  font-weight:bold;
+  font-size:16px;
+  margin-bottom:5px;
+}
+/*描述文字*/
+#show-list a.intro{
+  font:12px "microsoft yahei";
+  color:#808080;
+}
+
+#show-list>li>div>span{
+  display:inline-block;
+  width:24px;
+  height:24px;
+  font-size:32px;
+  color:#fff;
+  background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+  text-align:center;
+  line-height:24px;
+}
+#show-list>li>div>input{
+  width:25px;
+  height:24px;
+  border:none;
+  text-align:center;
+  position:relative;
+  bottom:6px;
+}
+#show-list>li>div>a.addCart{
+ display:inline-block;
+ width:100px;
+ height:32px;
+ text-align:center;
+ line-height:32px;
+ font-size:14px;
+ color:#fff;
+ background:linear-gradient(to bottom,#27b1f6,#0aa1ed);
+ border-radius:3px;
+ position:relative;
+ bottom:6px;
+}
+#show-list>li>div{
+  margin-top:10px;
+}
+/*页码*/
+#pages{
+  height:40px;
+  background:linear-gradient(to bottom,#f5f4f5,#e6e6e5);
+  text-align:right;
+  line-height:40px;
+  padding:0 20px;
+}
+#pages a{
+  padding:4px 10px;
+  border:1px solid #ddd;
+  border-radius:4px;
+  color:#0aa1ed;
+}
+#pages a.previous{
+  color:#bfbfbf;
+  background:#f2f2f2;
+  border:1px solid #bfbfbf;
+}
+#pages a.current{
+  background:#0aa1ed;
+  color:#fff;
+  border-color:#0aa1ed;
+}
+#pages a.border-c:hover{
+  border-color:#0aa1ed;
+}
+
+/*右侧：商家公告*/
+#notice-board p.title{
+  height:38px;
+  line-height:38px;
+  background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+  font-size:16px;
+  color:#808080;
+}
+#notice-board p.title img{
+  margin-left:15px;
+}
+#notice-board div.content{
+  background:#fff;
+  padding:20px;
+}
+#notice-board div.content p{
+  margin-bottom:5px;
+  font:12px "microsoft yahei";
+}
+
+/*购物车标题*/
+#cart p.title{
+  display:flex;
+  justify-content:space-between;
+  padding:0 10px;
+  font-size:14px;
+  height:28px;
+  line-height:28px;
+  background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+}
+
+/*中间文字内容样式*/
+#cart div.cart-content{
+  background:#fff;
+}
+#cart div.item{
+  border-top:1px dashed #d0d0d0;
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+}
+#cart div.item>span{
+  width:65px;
+  overflow:hidden;
+  text-overflow:ellipsis;/*用省略号来代表被隐藏的文本*/
+  white-space:nowrap;/*规定段落中的文本不换行*/
+}
+/*+ - 样式*/
+#cart div.item>div span{
+   display:inline-block;
+   width:14px;
+   height:14px;
+   background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+   color:#fff;
+   text-align:center;
+   line-height:14px;
+}
+#cart div.item>div input{
+  width:14px;
+  height:14px;
+  border:none;
+  outline:0;
+  text-align:center;
+}
+/*去结算*/
+#cart div.cart-result{
+  height:46px;
+  background:#808080;
+  line-height:46px;
+  border-top:1px dashed #d0d0d0;
+  padding-left:10px;
+  display:flex;
+  justify-content:space-between;
+}
+#cart div.cart-result span{
+  font-size:16px;
+  color:#fff;
+}
+#cart div.cart-result a{
+  width:35%;
+  background:linear-gradient(to bottom,#27b1f6,#0aa1ed);
+  color:#fff;
+  font-size:16px;
+  text-align:center;
+}

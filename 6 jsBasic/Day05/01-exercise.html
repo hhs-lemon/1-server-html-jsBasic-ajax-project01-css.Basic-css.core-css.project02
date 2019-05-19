@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <script>
+	   /*
+	    定义一个数组，数组中包含索引和字符串下标的元素。用for...in遍历出数组中的元素并打印在控制台。
+	   */
+	   var arr=[12,58,"TOM","lucy"];
+           arr["uname"]="LiLei";
+		   arr["ugender"]="男";
+		 // console.log(arr);
+		 for(var i in arr){
+		  //i:数组中元素的下标，既包含索引下标也包含字符串下标
+		    console.log(arr[i]);
+		 }
+	 </script>
+ </body>
+</html>

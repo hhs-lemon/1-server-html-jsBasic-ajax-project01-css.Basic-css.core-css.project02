@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>用户列表</title>
+ </head>
+ <body onload="loadUser()">
+   <table border="1px">
+      <thead>
+	    <tr>
+		   <th>登录名称</th>
+		   <th>电子邮箱</th>
+		   <th>联系方式</th>
+		   <th>用户姓名</th>
+		   <th>用户性别</th>
+		   <th>操作</th>
+		</tr>
+	  </thead>
+	  <tbody id="show-body"></tbody>
+   </table>
+
+   <script src="common.js"></script>
+   <script>
+      function loadUser(){
+	   var xhr=createXhr();
+	   xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+		 var arr=JSON.parse(xhr.responseText);
+		 //console.log(arr);
+		 var html="";
+		 for(var i=0;i<arr.length;i++){
+		    var user=arr[i];
+            html+="<tr>";
+			  html+="<td>"+user.uname+"</td>";
+			  html+="<td>"+user.email+"</td>";
+			  html+="<td>"+user.phone+"</td>";
+			  html+="<td>"+user.user_name+"</td>";
+              
+              var gender="";
+			  if(user.gender==1){
+			    gender="男";
+			  }else if(user.gender==0){
+			    gender="女";
+			  }else{
+			    gender="保密";
+			  }
+			  html+="<td>"+gender+"</td>";
+			  html+="<td>";   
+html+="<a href='javascript:deleteUser("+user.uid+")'>删除</a>";
+html+="<a href='05-sel-update.php?uid="+user.uid+"'>修改</a>";
+			  html+="</td>";
+			html+="</tr>";
+		 }
+		 $("show-body").innerHTML=html;
+		}
+	   }
+       xhr.open("get","03-list.php",true);
+	   xhr.send(null);
+	  }
+
+
+	function deleteUser(uid){
+	 //alert("要删除用户所对应的id值："+uid);
+    //发送异步请求，传uid到04-deleteUser.php中
+	   var xhr=createXhr();
+	   xhr.onreadystatechange=function(){
+	     if(xhr.readyState==4&&xhr.status==200){
+		    var res=xhr.responseText;
+			if(res=="1"){
+			   alert("删除成功");
+               loadUser();
+			}else{
+			   alert("删除失败");
+			}
+		 }
+	   }
+	   xhr.open("get","04-deleteUser.php?uid="+uid,true);
+	   xhr.send(null);
+	  }
+
+   </script>
+ </body>
+</html>

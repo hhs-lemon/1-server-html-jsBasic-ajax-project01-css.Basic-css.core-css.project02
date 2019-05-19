@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nisi incidunt hic dignissimos enim modi possimus maiores! Labore, quibusdam neque dolorem pariatur necessitatibus eius id quam vero sint repellendus corporis!</p>
+     <input type="button" onclick="getConten()" value="获取文本">
+	 <input type="button" onclick="change_Con()" value="更改内容"><br>
+	 用户名：<input type="text" id="uname" value="dangdang">
+    <script>
+	  /*
+	  1.页面中新建一个段落元素，设置id为p1，内容随意。
+      2.在页面中添加一个按钮，点击时，获取p元素中的文本，并打印在控制台。
+      3.再添加一个按钮，点击时，将p元素中的文本设置为“这是我的第一个DOM操作”。
+	  */
+	  function getConten(){
+	     var p=document.getElementById("p1");
+         console.log("这是段落元素中的文本："+p.innerHTML);
+         var input=document.getElementById("uname");
+		 console.log("这是用户名输入框的内容："+input.value);
+	  }
+      function change_Con(){
+	    var p=document.getElementById("p1");
+	    p.innerHTML="这是我的第一个DOM操作";
+
+		var input=document.getElementById("uname");
+		input.value="dingding";
+	  }
+	</script>
+ </body>
+</html>

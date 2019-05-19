@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="common.js"></script>
+ </head>
+ <body>
+    <p>
+	  用户名称：<input type="text" id="uname" onfocus="uname_focus()" onblur="uname_blur()">
+	  <span id="uname-show"></span>
+	</p>
+	<p>
+	  用户密码：<input type="password" id="upwd" onblur="upwd_blur()" onfocus="upwd_focus()">
+	  <span id="upwd-show"></span>
+	</p>
+	<p>
+	  重复密码：<input type="password" id="cpwd"cpwd_blur()">
+	  <span id="c onblur="pwd-show"></span>
+	</p>
+     <script>
+	   /*
+	1.网页中创建以下元素
+       1.文本框-用户名称：uname
+       2.密码框-用户密码：upwd
+       3.密码框-重复密码：cpwd
+       以上三个元素后各创建一个span元素
+    2.添加以下事件
+      1.文本框获取焦点时，提示，用户名称6-12位
+      2.文本框失去焦点时，判断，用户名是否为空并给出提示（用户名不能为空/通过）
+      3.upwd获取焦点时，提示，密码6-18位
+      4.upwd失去焦点时，判断，密码是否为空给出相应提示（密码不能为空/通过）
+      5.cpwd失去焦点时，判断cpwd的值是否与upwd的值一致，并给出提示（两次密码不一致/通过）。
+	   */
+	  //用户名文本框
+      function uname_focus(){
+	     $("uname-show").innerHTML="用户名称6-12位";
+	  }
+	  function uname_blur(){
+	     var uname=$("uname").value;
+		 if(uname==""){
+		    $("uname-show").innerHTML="用户名称不能为空";
+		 }else{
+		   $("uname-show").innerHTML="通过";
+		 }
+	  }
+      //密码框
+      function upwd_focus(){
+	     $("upwd-show").innerHTML="请输入6-18位的密码";
+	  }
+	  function upwd_blur(){
+	     if($("upwd").value==""){
+		   $("upwd-show").innerHTML="密码不能为空";
+		 }else{
+		    $("upwd-show").innerHTML="通过";
+		 }
+	  }
+	  //重复密码框
+	  function cpwd_blur(){
+	     var upwd=$("upwd").value;
+		 var cpwd=$("cpwd").value;
+		 if(upwd!=cpwd){
+		   $("cpwd-show").innerHTML="两次密码不一致";
+		 }else{
+		   $("cpwd-show").innerHTML="通过";
+		 }
+	  }
+	 </script>
+ </body>
+</html>

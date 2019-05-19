@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <input type="button" value="加载数据" onclick="getXML()">
+
+	<script src="common.js"></script>
+	<script>
+	  function getXML(){
+	     //1.创建xhr
+		 var  xhr=createXhr();
+		// console.log(xhr);
+		 //2.监听
+		 xhr.onreadystatechange=function(){
+		   if(xhr.readyState==4&&xhr.status==200){
+		      var str=xhr.responseXML;
+			  //console.log(str);
+			  //取到的是3个学员
+			  var students=str.getElementsByTagName("student"); 
+			 // console.log(students);
+			 //在类数组中，取第二个学员
+			 var stu=students[1];
+			 //console.log(stu);
+			 //取学员的姓名：标签-name
+			 var uname=stu.getElementsByTagName("name");//返回的是类数组
+			 var age=stu.getElementsByTagName("age");
+
+			 console.log(uname[0].innerHTML);
+			 console.log(age[0].innerHTML);
+
+		   }
+		 }
+		 //3.打开连接
+		 xhr.open("get","student.xml",true);
+		 //4.发送请求
+		 xhr.send(null);
+	  }
+	</script>
+ </body>
+</html>

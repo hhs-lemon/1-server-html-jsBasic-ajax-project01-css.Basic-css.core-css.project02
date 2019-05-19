@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /*声明动画*/
+	@keyframes change{
+	   0%{
+	     background:red;
+		 border-radius:0%;
+	   }
+	   25%{
+	     background:pink;
+		 border-radius:50%;
+	   }
+	   50%{
+	     background:yellow;
+		 border-radius:0%;
+	   }
+	   75%{
+	     background:blue;
+		 border-radius:50%;
+	   }
+	   100%{
+	     background:black;
+		 border-radius:0%;
+	   }
+	}
+
+	div{
+	  width:200px;
+	  height:200px;
+	  border:1px solid blue;
+	  animation:change 5s linear 2s 3;
+	  animation-fill-mode:both;
+	}
+	div:hover{
+	  /*animation-name:change;
+	  animation-duration:5s;
+	  animation-timing-function:linear;
+	  animation-delay:2s;
+	  animation-iteration-count:3;
+	  animation-direction:reverse;*/
+	  animation-play-state:paused;
+	 
+	}
+  </style>
+ </head>
+ <body>
+   <div></div>
+ </body>
+</html>
+<!-- 动画
+1.@keyframes change{
+	0%{} ;
+	10%{};
+	...
+}
+2.样式中引用属性：
+	1.animation:change 3s linear 2s infinite reverse
+		   动画：名称 时长 方式 延迟 次数 方向
+ 	2.播完后保存开始第一帧
+ 		animation-fill-mode:both;
+ 	3.停靠暂停：animation-play-state:paused;
+
+ -->

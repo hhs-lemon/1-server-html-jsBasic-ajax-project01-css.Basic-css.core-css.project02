@@ -1,0 +1,127 @@
+复习：
+  1.js对象的数据格式
+    var 对象名={
+       属性：值，
+       属性：值
+    }
+
+    取值：对象名.属性名
+  2.JSON格式数据
+    1.JSON字符串
+      var str='{
+          "name":"TOM",
+	  "age":20
+      }';
+      
+    2.JSON数组
+      '["tom","lucy","lilei"]'
+      '[
+         {
+	   "name":"tom",
+	   "age":20,
+	   "height":180
+	 },
+	 {
+	   "name":"lucy",
+	   "age":20,
+	   "height":160
+	 },
+	 {
+	   "name":"lilei",
+	   "age":20,
+	   "height":170
+	 }
+      ]'
+    3.在php中如何将数组转换成json字符串
+      通过json_encode()将数组转换成json字符串
+    4.在网页中如何解析json字符串
+      JSON.parse();
+=========================================
+1.AJAX
+  Asynchronous Javascript And Xml
+  1.什么是XML
+    eXtensible Markup Language
+    可扩展的    标记   语言
+    xml的宗旨是做数据的传递，而非数据展示。
+    xml的标记没有被预定义过，需要自行定义。
+  2.xml的语法规范
+    xml可以保存成独立的xxx.xml的文件，也可以字符串的方式串出现。
+    1.xml的顶部是xml的声明
+      <?xml version="1.0" encoding="utf-8"?>
+    2.xml标记的语法
+      1.xml的标记必须成对出现
+        <person> //错误
+      2.xml的标记必须严格区分大小写，开始和结束标记必须一致
+        <Person></person> //错误
+      3.xml的标记可以嵌套，注意嵌套顺序
+        <person>
+	   <student>
+	      <name></name>
+	   </student>
+	</person>
+      4.每个标记都允许自定义属性，格式与html一致，但属性值，必须用""括起来
+        <person num="1" name=""></person>
+      5.每个xml文档中，必须要有一对根元素
+
+      练习：
+        1.在xml文件中创建一对根元素<studentlist>
+	2.在<studentlist>中，使用<student>标记表示学生
+	3.在<student>中，分别用三对标记展示学生姓名，年龄和性别
+    3.使用AJAX请求xml文档
+      1.遵循ajax的请求步骤
+        1.创建异步对象（xhr）
+	2.绑定监听事件
+	3.打开连接
+	4.发送请求
+       练习：
+        新建一个网页，页面中添加一个按钮，点击按钮时向student.xml文件发送请求，并将取回数据中学员的姓名打印在控制台。
+      2.解析xml文档对象的内容
+        1.核心方法
+	  document.getElementsByTagName("标签名");
+	  返回值：返回一个包含指定元素们的"类数组"。
+    4.在php中返回xml格式的字符串
+      1.必须增加响应的消息头
+       header("Content-Type:application/xml");
+      2.按照xml的语法结构，拼xml字符串，再响应给前端
+       $xml="<?xml version='1.0' encoding='utf-8'?>";
+       $xml.="<studentlist>"
+         $xml.="<student>";
+	   ...
+	 $xml.="</student>";
+       $xml.="</studentlist>";
+      练习：
+        1.新建一个02-xml.php文件，在php中拼xml格式的字符串响应给前端（内容可参考student.xml）
+	2.新建一个02-getxml.html，在网页中添加按钮，点击按钮时请求02-xml.php文件，并将取回的数据展示在div中。
+project=============================
+ 1.完成用户注册操作
+   1.创建一个01-register.html（非ajax）
+     提供以下表单控件（表单）
+       1.登录名称
+       2.登录密码
+       3.确认密码
+       4.用户邮箱
+       5.联系方式
+       6.用户姓名
+       7.用户性别
+       8.注册按钮
+   2.创建01-register.php
+     接收01-register.html提交过来的数据，并插入到数据，再给出相应提示
+   3.在01-register.html中，登录名称框失去焦点时验证登录名是否已存在（AJAX）
+     1.创建checkUname.php,在php文件中接收前端传递过来的uname，将uname拿到数据库中查询，判断用户名是否已存在。
+     2.登录名称框失去焦点时，发送异步请求到checkUname.php,完成用户名的验证。
+     3.登录密码框失去焦点时，如果密码框为空，提示“密码不能为空”，否则“通过”，重复密码框失去焦点时验证两次密码是否一致。
+   
+ 课后作业：
+  创建一个02-login.html(非AJAX)
+    提供以下表单控件
+      1.登录名称-文本框
+      2.登录密码-密码框
+      3.登录按钮
+    创建一个02-login.php,接收02-login.html提交过来的数据，判断用户登录是否成功，并给出提示（登录成功/登录失败）。
+
+
+
+      
+
+
+    

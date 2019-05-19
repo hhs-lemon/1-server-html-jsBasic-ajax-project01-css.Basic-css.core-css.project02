@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+   /*页面上创建一个200*200的div，设置背景颜色，鼠标悬停时，该元素向右偏移200px,向下偏移200px,旋转135deg,向x轴倾斜45deg,同时放大1.5倍，查看效果。*/ 
+   div{
+     width:200px;
+	 height:200px;
+	 background:blue;
+   }
+   div:hover{
+     transform:translate(200px,200px) rotate(135deg) skewX(45deg) scale(1.5);
+   }
+  </style>
+ </head>
+ <body>
+    <div></div>
+ </body>
+</html>
+<!-- 
+停靠转换：
+transform:translate(200px,200px) rotate(135deg) skewX(45deg) scale(1.5);
+转换：位移 旋转 倾斜 缩放
+ -->

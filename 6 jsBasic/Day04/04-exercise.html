@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	 1.随机生成一个1-100之间的数字
+	  Math.random();生成0-1之间的随机数
+	  var r=parseInt(Math.random()*100)+1;
+	 2.让用户输入一个数字
+	   如果输入的数字比随机数大，提示猜大了；
+	   如果输入的数字比随机数小，提示猜小了；
+	   否则，猜对了！
+	   允许循环猜数
+	 3.输入exit也可以退出游戏。
+	  */
+	  function guess(){
+	   var r=parseInt(Math.random()*100)+1;
+	     do{
+		    var num=prompt("请输入一个整数：");
+            if(num=="exit"){
+			  alert("退出游戏");
+			}else if(num>r){
+			  alert("猜大了");
+			}else if(num<r){
+			  alert("猜小了");
+			}else if(num==r){
+			  alert("恭喜你，猜对了！");
+			}
+		 }while(num!=r && num!="exit")
+	  }
+	  guess();    
+	</script>
+ </body>
+</html>

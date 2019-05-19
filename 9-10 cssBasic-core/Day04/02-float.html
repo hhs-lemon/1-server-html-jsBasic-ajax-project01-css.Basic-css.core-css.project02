@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+     #d2,#d1{
+	   width:300px;
+	   height:200px;
+	 }
+	 #d1{
+	   background:red;
+	   float:left;
+	 }
+	 #d2{
+	   background:yellow;
+	   clear:both;
+	 }
+	 #d3{
+	   background:blue;
+
+	  
+	 }
+	/*span{
+	   width:300px;
+	   height:200px;
+	   border:1px solid red;
+	   float:right;
+	 }*/
+     #d6{
+	   border:2px solid blue;
+	   /*float:left;*/
+	   /*overflow:hidden;*/
+	 }
+	 #d4,#d5{
+	   width:200px;
+	   height:200px;
+	   background:gray;
+	   float:left;
+	 }
+	 .my_clear{
+	    clear:both; 
+	 }
+  </style>
+ </head>
+ <body>
+    <div id="d1">11111111111111111111111111</div>
+    <div id="d2">22222222222222222222</div>
+    <div id="d3">333333333333333</div>
+	<b>这是行内元素b</b>
+
+	<span>sssss11111</span>
+	<span>s222222222222</span>
+	<div id="d6">
+	   <div id="d4"></div>
+	   <div id="d5"></div>
+	   <div class="my_clear"></div>
+	</div>
+	<div></div>
+ </body>
+</html>
+<!-- 
+1浮2不浮2清除使2不卡3不浮
+大6边框45浮后+div样式设置清除（45不占高度，清除后，父元素高度被撑开）
+ -->

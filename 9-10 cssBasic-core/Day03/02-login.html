@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <style>
+     #main{
+	   height:560px;
+	   width:960px;
+	   background:url(register/bg.png) no-repeat;
+	   margin:auto;
+	 }
+	 #main div.black{
+	   width:260px;
+	   height:280px;
+	   background-color:rgba(0,0,0,.3);
+	   margin-left:500px;
+	   margin-top:180px;
+	 }
+
+	 #main div.black table{
+	   width:100%;
+	 }
+	 #main div.black table td{
+	   color:#fff;
+	
+	 }
+
+    #main div.black table td a{
+	   color:#fff;
+	   text-decoration:none;
+	   font-size:12px;
+	 }
+   #main div.black table td.sp{
+     font-size:12px;
+   }
+   #uname,#upwd,#btn{
+     width:100%;
+	 height:32px;
+	 border:0;
+	 outline:0;
+	 padding:0 50px 0 15px;
+	 box-sizing:border-box;
+	 margin-top:20px;
+   }
+   #uname,#upwd{
+     background:#fff url(register/yhm.png) no-repeat right center;
+   }
+   #upwd{
+     background-image:url(register/mm.png);
+   }
+   #btn{
+     background:linear-gradient(to bottom,#27b1f6 0%,#0aa1ed 100%);
+   }
+   table h4{
+     margin:0;
+   }
+  </style>
+ </head>
+ <body>
+    <div id="main">
+	   <table></table> <!-- 加空标签父子元素隔开，让子元素margin不跑到父元素取-->
+	   <div class="black">
+	      <table>
+		    <tr>
+			   <td>
+			      <h4>登录学子商城</h4>
+			   </td>
+			   <td align="right">
+			      <a href="#">新用户注册</a>
+			   </td>
+			</tr>
+		    <tr>
+			   <td colspan="2"><hr></td>
+			</tr>
+		    <tr>
+			   <td colspan="2" >
+			     <input type="text" id="uname" placeholder="请输入您的用户名">
+			   </td>
+			</tr>
+		    <tr>
+			  <td colspan="2">
+			    <input type="password" id="upwd" placeholder="请输入您的密码">
+			  </td>
+			</tr>
+		    <tr>
+			  <td class="sp">
+			    <input type="checkbox">自动登录
+			  </td>
+			  <td align="right">
+			    <a href="#">忘记密码</a>
+			  </td>
+			</tr>
+		    <tr>
+			  <td colspan="2">
+			    <input type="button" id="btn" value="登录">	
+			  </td>
+			</tr>
+		  </table>
+	   </div>
+	</div>
+ </body>
+</html>
+
+<!-- 
+ 1. 加空标签父子元素隔开，让子元素margin不跑到父元素取
+ 2.div包table，div可设背景
+ 3.表6行2列 字色 连接字体及样式 输入框和按钮宽高无边框无外框 内边距上0右50下0左15 输入框背景：白 图 不平铺 右 中
+ 	按钮背景（图）：渐变linear-gradient(方向，颜色 0%，颜色 100%)
+ -->

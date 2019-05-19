@@ -1,0 +1,140 @@
+/*banner广告图的样式*/
+    ul{
+	  list-style:none;
+	  margin:0;
+	  padding:0;
+	}
+    #banner{
+	  width:960px;
+	  height:380px;
+	  margin:0 auto;
+	  overflow:hidden;
+	  position:relative;
+	}
+	#banner ul.banner-img img{
+	  width:960px;
+	}
+    #banner ul.banner-img li{
+	   float:left;
+	}
+	
+	a.ck-side{
+	  width:35px;
+	  height:70px;
+	  border-radius:5px;
+	  position:absolute;
+	  top:155px;
+	}
+	a.ck-left{
+	  background:#ddd url(../img/index/arrow-left.png) no-repeat center center;
+	  left:5px;
+	}
+	a.ck-right{
+	  background:#ddd url(../img/index/arrow-right.png) no-repeat center center;
+	  right:5px;
+	}
+    #banner ul.ind{
+	   position:absolute;
+	   bottom:20px;
+	   left:450px;
+	}
+	#banner ul.ind li{
+	  float:left;
+	  width:10px;
+	  height:10px;
+	  background:#fff;
+      border-radius:50%;
+	  margin-right:5px;
+	}
+	#banner ul.ind li.active{
+	  background:#0aa1ed;
+	}
+
+/***********6附图弹性布局样式*************/
+    div.content{
+	   width:960px;
+	   margin:0 auto;
+	   display:flex;
+	   flex-wrap:wrap;
+	   justify-content:space-between;
+	}
+	div.content>div{
+	  background:#ddd;
+	  margin-bottom:10px;
+	}
+	div.content>div:nth-child(1){
+	  width:610px;
+	  height:370px;
+	  position:relative;
+	}
+	div.content>div:nth-child(2){
+	  width:340px;
+	  height:370px;
+	}
+	div.content>div:nth-child(3){
+	  width:360px;
+	  height:230px;
+	}
+	div.content>div.product{
+	  width:190px;
+	  height:230px;
+	}
+   /*第一块div中的具体内容样式*/
+   div.content div.desc p.name{
+     font-size:32px;
+	 color:#333;
+	 margin:0;
+   }
+   div.content p.details{
+     font-size:12px;
+	 margin-bottom:24px;
+	 color:#666;
+   }
+   div.content p.price{
+     font-size:24px;
+	 margin-bottom:12px;
+	 color:#0aa1ed;
+   }
+   div.content a.view{
+     display:block;
+	 width:130px;
+	 height:40px;
+	 background:linear-gradient(to bottom,#27b1f6 0%,#0aa1ed 100%);
+	 color:#fff;
+     text-align:center;
+	 line-height:40px;
+	 text-decoration:none;
+   }
+   div.content div.desc{
+     width:245px;
+	 position:absolute;
+	 top:55px;
+	 left:65px;
+   }
+   div.content div:nth-child(1) img{
+      position:absolute;
+	  top:56px;
+	  right:30px;
+   }
+
+div.floor{
+  margin-top:20px;
+}
+/*楼层标题样式*/
+div.floor>div.floor-top{
+  font-size:24px;
+  font-weight:bold;
+  border-bottom:2px solid #d9d9d9;
+  padding-bottom:4px;
+  margin-bottom:10px;
+  background:url(../img/index/computer_icon.png) no-repeat left center;
+  padding-left:40px;
+}
+
+/*图片放大效果：过渡*/
+div.content img{
+  transition:all .5s linear;
+}
+div.content img:hover{
+  transform:scale(1.1);
+}

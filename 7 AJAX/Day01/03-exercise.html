@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="common.js"></script>
+ </head>
+ <body>
+    <input type="text" id="uname">
+	<div id="d1">我是div</div>
+	<input type="button" onclick="getValue()" value="获取并设置值">
+	
+    <script>
+	  /*
+	  页面中创建一个文本框id为uname,再创建一个div元素，id为d1,再添加一个按钮到页面，点击按钮时，将文本框中的数据，显示在div中。
+	  */
+ function getValue(){
+  /* var input=document.getElementById("uname");
+   var d=document.getElementById("d1");*/
+   var input=$("uname");
+   var d=$("d1");
+   d.innerHTML="<h1>"+input.value+"</h1>";
+ }
+
+
+	</script>
+ </body>
+</html>

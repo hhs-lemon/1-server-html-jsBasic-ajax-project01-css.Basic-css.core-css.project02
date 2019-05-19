@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+    /*
+	   1.在页面中创建一个100*100的元素
+       2.鼠标悬停时，5s之内，向右偏移500px同时再旋转3圈。
+       3.鼠标移出时，还能滚回来。
+	*/
+	div{
+	  width:100px;
+	  height:100px;
+	  background:yellow;
+	  border-radius:50%;
+	  color:red;
+	  font-size:50px;
+	  font-weight:bold;
+	  text-align:center;
+	  line-height:100px;
+	  transition:all 5s linear;
+	}
+	div:hover{
+	  transform:translate(500px) rotate(1080deg);
+	  color:pink;
+	}
+  </style>
+ </head>
+ <body>
+    <div>滚</div>
+ </body>
+</html>
+<!-- 过度
+	分析：停靠触发样式变化，原样式中设置了过度属性
+1.样式:transition:all 5s linear;
+	   当过度时：所有变化属性 5秒 直线变化
+2.样式变化了触发原样式中的过度transition向着两个属性变化：属性1.转换：位移x500px 旋转1080度; 属性2.颜色
+ 
+ -->

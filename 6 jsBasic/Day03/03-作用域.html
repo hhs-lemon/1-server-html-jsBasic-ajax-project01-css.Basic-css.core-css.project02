@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  var g_num=20; //全局变量
+	  function test(){
+	    var num=10; //局部变量
+        uname="Tom"; //不推荐
+		console.log("函数体内："+num);
+		console.log(g_num);
+		console.log("函数体内："+uname);
+	  }
+	  function test1(){
+	    console.log("在另外的函数体内："+uname);
+	  }
+	  //test();
+      // console.log(g_num);
+	  //console.log("函数体外："+num);
+	 // console.log("函数体外："+uname);
+	</script>
+
+	<input type="button" value="test" onclick="test()">
+	<input type="button" value="test1" onclick="test1()">
+ </body>
+</html>

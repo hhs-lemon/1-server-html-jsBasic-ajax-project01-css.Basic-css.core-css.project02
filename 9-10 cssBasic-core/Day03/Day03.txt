@@ -1,0 +1,210 @@
+1.背景
+ 1.背景色
+   属性：background-color
+   取值：合法的颜色值
+   注意：背景颜色和背景图片默认都从边框位置处开始填充
+ 2.背景图片
+   属性：background-image
+   取值：url(图片的路径);
+   ex:
+     background-image:url(a.jpg);
+ 3.背景图片平铺
+   属性：background-repeat
+   取值：
+      1.repeat 平铺
+      2.no-repeat 不平铺，只显示一次
+      3.repeat-x 只在横向平铺
+      4.repeat-y 只在纵向平铺
+ 4.背景图片尺寸
+   属性：background-size
+   取值：
+      1.value1(宽) value2(高)
+      2.x% y%
+      3.cover 将背景图等比放大，直到背景图完全覆盖到元素的所有区域为止。
+      4.contain 将背景图等比放大，直到背景图碰到元素的某一个边缘为止。
+ 5.背景图片的固定
+   属性：background-attachment
+   取值：
+      1.scroll 默认值，滚动
+      2.fixed 固定
+ 6.背景图片定位
+   作用：改变背景在元素中的位置
+   属性：background-position
+   取值：
+      1.x y
+        x：背景图在水平方向的偏移距离
+	   取值为正，向右移动
+	   取值为负，向左移动
+	y：背景图在垂直方向的偏移距离
+	   取值为正，向下移动
+	   取值为负，向上移动
+      2.x% y%
+        0% 0% 背景在左上角
+	100% 100% 背景在右下角
+	50% 50% 背景在正中间
+      3.关键词
+        x:left/center/right
+	y:top/center/bottom
+ 7.背景的简写属性
+   在一个属性中指定多个属性值
+   background:color url() repeat attachment position;
+   ex:
+    background:red;
+    background:url(a.jpg) no-repeat fixed center center;
+2.渐变
+  1.什么是渐变
+    渐变指的是多种颜色平缓变化的一种显示效果。
+  2.渐变的主要因素
+    1.色标：一种颜色 及其 出现的位置
+      一个渐变是由多个色标组成（至少两个）
+  3.渐变的分类
+    1.线性渐变
+      以直线的方向来填充渐变色
+    2.径向渐变
+      以圆形的方式来填充渐变色
+    3.重复渐变
+      将线性渐变 或 径向渐变 重复几次实现渐变填充
+  4.线性渐变
+    属性：backgrond-image
+    取值：linear-gradient(angle,color-point1,color-point2,...);
+        angle:表示渐变填充的方向或角度
+	取值：
+	   1.关键词
+	     to top 从下向上填充渐变色
+	     to bottom 从上向下填充渐变色
+	     to left 从右向左填充渐变色
+	     to right 从左向右填充渐变色
+	   2.角度值
+	     0deg 从下向上(等同于to top)
+	     180deg 从上向下(等同于to bottom)
+        color-point:色标
+	   表示颜色及其位置
+	   取值：颜色和位置的组和，中间用空格隔开。
+	   ex:
+	     red 0px;
+	     blue 100px;
+	     green 200px;
+  5.径向渐变
+    属性：background-image
+    取值：radial-gradient([size at position],color-point1,color-point2,...);
+        size:半径，以px为单位的数字
+	position:圆心所在位置
+	         1.x y:具体数字
+		 2.x% y%:元素宽和高的占比
+		 3.关键词
+		   x:left/center/right
+		   y:top/center/bottom
+  6.重复渐变
+    1.重复线性渐变
+      background-image:repeating-linear-gradient(angle,color-point,...);
+      color-point:位置一定要给绝对数值（px），不要用百分比。
+    2.重复径向渐变
+      backgrond-image:repeating-radial-gradient([size at position],color-point);
+    练习：
+      给一个div设置高宽各400px,然后设置重复线性渐变背景色。
+  7.浏览器兼容性
+    各浏览器的新版都支持渐变属性
+    对于不支持的浏览器版本，可以通过增加浏览器前缀的方式，让浏览器支持渐变。
+    Firefox:-moz-
+    Chrome&Safari:-webkit-
+    IE:-ms-
+    opera:-o-
+    ex：
+     background-image:-webkit-linear-gradient();
+
+    www.caniuse.com
+3.文本格式化属性
+  1.字体属性
+    1.指定字体
+      属性：font-family
+      取值：用逗号隔开字体名称列表
+      ex:
+        font-family:"微软雅黑","黑体",Arial;
+    2.字体大小
+      属性：font-size
+      取值：以px或pt为单位的数值
+    3.字体加粗
+      属性：font-weight
+      取值：
+          1.bold 加粗(b标记)
+	  2.normal 正常
+	  3.value 整百倍的数字 400-900
+    4.字体样式
+      属性：font-style
+      取值：
+          1.italic 斜体(i标记)
+	  2.normal 正常
+    5.小型大写字母
+      将小写字符变为大写，但大小与小写字符一致。
+      属性：font-variant
+      取值：
+          1.normal 正常
+	  2.small-caps 小型大写字符
+      练习：
+         在网页中定义一个div元素，并设值id为main,内容随意，中英文结合
+	 设置以下格式：
+	    1.字体：微软雅黑
+	    2.文字大小:24px
+	    3.加粗并且倾斜显示文本
+	    4.将所有小写字符转为小型大写字符
+    6.字体属性的简写方式
+      属性：
+         font:style variant weight size family;
+      注意：使用简写方式时，必须要设置family的值，否则无效。
+         ex:font:24px;//错误
+	    font:24px "微软雅黑";//正确
+  2.文本格式化
+    1.文本颜色
+      属性：color
+      取值：合法的颜色值
+    2.文本排列
+      作用：指定文本（行内，行内块）在水平方向的对齐方式。
+      属性：text-align
+      取值：left/center/right/justify(两端对齐)
+    3.线条修饰
+      属性：text-decoration
+      取值：
+         1.none 无任何线条修饰
+	 2.underline 下划线
+	 3.overline 上划线
+	 4.line-through 删除线
+    4.行高
+      作用：一行数据所占的高度
+            如果行高大于字体本身的大小，那么改行文本将在指定的行高内呈现垂直居中的效果。
+      属性：line-height
+      取值：以px为单位的数值
+    5.首行文本缩进
+      属性：text-indent
+      取值：以px为单位的数值
+    6.文字阴影
+      属性：text-shadow
+      取值：h-shadow v-shadow blur color;
+      练习：
+        在上面文本练习的基础上，增加以下效果：
+	   1.文本排列方式为两端对齐
+	   2.文本的修饰为下划线
+	   3.行高设为100px,并观察设完行高后的文本效果
+	   4.文本阴影，水平和垂直偏移0px，模糊距离为3px，颜色红色
+4.表格
+  1.表格的常用属性
+    1.边距属性：padding
+    2.边框属性：border
+    3.尺寸属性：width,height
+    4.文本格式化属性：font-*，text-*,line-height
+    5.背景属性：颜色，图片，渐变
+    6.vertical-align
+      作用：指定单元格数据的垂直对齐方式
+      取值：
+          top:上对齐
+	  middle:居中对齐
+	  bottom:下对齐
+    练习：
+      创建一个表格尺寸为400*400px,4行4列
+        1.创建每个单元格的尺寸为100*100
+	2.设置表格和单元格的边框为1px solid #000
+	3.尝试着为每个td增加上外边距10px.
+
+
+         
+         
+

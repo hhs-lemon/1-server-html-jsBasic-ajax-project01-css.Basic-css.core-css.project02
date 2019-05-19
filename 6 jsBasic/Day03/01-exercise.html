@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	   var score=Number(prompt("请输入考试成绩："));
+	   /*如果成绩等于100，则输出"奖励1000元"，
+	如果成绩>=90，则输出"奖励100元"，
+	如果成绩>=70，则输出"奖励10元素"，
+	否则，输出"请大家吃饭"。*/
+
+	   var result=score==100?"奖励1000元":
+	   score>=90?"奖励100元":
+	   score>=70?"奖励10元":
+	   "请大家吃饭";
+
+	   console.log(result);
+	</script>
+ </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <select name="" id="city" onchange="getValue()">
+	    <option value="bj">北京市</option>
+	    <option value="tj">天津市</option>
+	    <option value="sh">上海市</option>
+	    <option value="gz">广州市</option>
+	 </select>
+	 <script src="common.js"></script>
+	 <script>
+	     function getValue(){
+		   alert($("city").value);
+		 }  
+	 </script>
+ </body>
+</html>

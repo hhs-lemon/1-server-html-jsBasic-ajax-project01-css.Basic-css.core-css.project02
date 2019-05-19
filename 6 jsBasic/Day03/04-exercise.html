@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	  1.创建变量score,赋值为90；
+	  2.再创建函数changeScore(num),在函数体内将num+5再输出。
+	  3.调用changeScore函数,并将score以实参传入函数，再输出score的值。
+	  */
+	  var score=90;
+	  function changeScore(num){
+	     num+=5;
+		 console.log("函数体内："+num);
+	  }
+	  changeScore(score);
+	  console.log("函数体外："+score);
+
+	</script>
+ </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    table{
+	  width:900px;
+	  border-bottom:1px solid #666;
+	}
+	body{
+	  color:#9c9a9c;
+	  font-size:12px;
+	}
+	table th{
+	  color:#666;
+      border-bottom:1px solid #666;
+	  padding:5px 0;
+	}
+	table td{
+	  border-bottom:1px dotted #ddd;
+	  padding:5px 0;
+	  text-align:center;
+	}
+	.col1{
+	   width:600px;
+	   text-align:left;
+	}
+	td.col1{
+	   color:#0159A3;
+	}
+	td.col3{
+	   color:#0159A3;
+	}
+
+	/*顶部样式*/
+	#top{
+	  width:900px;
+	  height:30px;
+	  background:#eee;
+	}
+	#top>a{
+	  color:#0159A3;
+	  text-decoration:none;
+	  float:left;
+	  width:100px;
+	  height:30px;
+	  text-align:center;
+	}
+	#top>a.active{
+	  background:#fff;
+	  border-left:1px solid #ddd;
+      border-right:1px solid #ddd;
+	  border-top:2px solid red;
+      margin-top:-3px;
+	  height:31px;
+	  line-height:31px;
+	  color:red;
+	}
+  </style>
+ </head>
+ <body>
+    <div id="top">
+	   <a href="#">网友讨论圈</a>
+	   <a href="#" class="active">晒单帖</a>
+	   <a href="#">讨论帖</a>
+	   <a href="#">问答帖</a>
+	   <a href="#">圈子帖</a>
+	</div>
+    <table>
+	   <tr>
+	     <th class="col1">主题</th>
+	     <th>回复/浏览</th>
+	     <th>作者</th>
+	     <th>时间</th> 
+	   </tr>
+	   <tr>
+	     <td class="col1">银灰色，很酷</td>
+	     <td>0/0</td>
+	     <td class="col3">2001年冬天</td>
+	     <td>2014年11月10日 10:00</td>
+	   </tr>
+	   <tr>
+	     <td class="col1">性价比超高，活动给力</td>
+	     <td>0/0</td>
+	     <td class="col3">2001年冬天</td>
+	     <td>2014年11月10日 10:00</td>
+	   </tr>
+	   <tr>
+	     <td class="col1">外形精致，值得购买</td>
+	     <td>0/0</td>
+	     <td class="col3">2001年冬天</td>
+	     <td>2014年11月10日 10:00</td>
+	   </tr>
+	   <tr>
+	     <td class="col1">支持，不错</td>
+	     <td>0/0</td>
+	     <td class="col3">2001年冬天</td>
+	     <td>2014年11月10日 10:00</td>
+	   </tr>
+	</table>
+ </body>
+</html>
+<!-- 
+顶部：
+	布局：div>a*5 class为active 变样
+	div 宽高 背景灰 
+	a 字体无修饰(横线) 宽高 左浮
+	变样class：
+		a背景白 左右边框1px 上边框2 红 
+		a上浮-3让上边框突出：margin-top:-3px;
+展开内容：
+	布局：table>li*5>td*4
+	table底边同th底边
+ -->

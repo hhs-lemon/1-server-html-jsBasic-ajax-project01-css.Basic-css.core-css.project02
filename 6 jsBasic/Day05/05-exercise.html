@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*声明两个数组分别保存一些国家的名称
+        1.数组l:大国
+	    2.数组s:小国
+         将小国全部移入到大国数组中，并且将小国数组清空。*/
+	   var l=["中国","美国","英国","俄罗斯"];
+	   var s=["日本","泰国","韩国","朝鲜"];
+       var res=l.concat(s);
+	   console.log(res);
+	   s.length=0;//清空数组
+	   console.log(s); 
+	</script>	
+ </body>
+</html>

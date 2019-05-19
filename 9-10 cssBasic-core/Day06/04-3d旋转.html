@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+      #d1{
+	    width:300px;
+		height:300px;
+		border:1px solid red;
+		margin:100px auto;
+		perspective:200px;
+	  }
+	  #d2{
+	    width:200px;
+		height:200px;
+		background:yellow;
+		font-size:30px;
+		font-weight:bold;
+		margin:100px auto;
+		transform:rotate3D(1,1,1,45deg);
+	  }
+  </style>
+ </head>
+ <body>
+   <div id="d1">
+       <div id="d2">3D旋转</div>
+  </div>
+ </body>
+</html>
+
+<!-- 
+3d:转换，可以转出父元素
+
+父元素：透视距里：perspective:200px;
+
+子元素：transform:rotate3D(1,1,1,45deg);
+转换：旋转3D(x,y,z,角度)
+ -->

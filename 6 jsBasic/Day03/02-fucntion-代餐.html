@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+   <script>
+    /*
+	1.定义一个函数名称calculate(计算)
+	在函数体内，定义两个变量,num1, num2并赋值为数字，计算两个数字之和，并打印在控制台。
+    2.在网页中添加一个按钮，单击按钮时调用函数。
+	*/
+	function calculate(){
+	  var num1=16;
+	  var num2=18;
+	  console.log(num1+num2);
+	}
+	function print(){
+	  console.log("这是一个函数");
+	}
+	function test(){
+	   calculate();
+	   print();
+	}
+   </script>
+   <input type="button" value="计算和" onclick="test()">
+ </body>
+</html>

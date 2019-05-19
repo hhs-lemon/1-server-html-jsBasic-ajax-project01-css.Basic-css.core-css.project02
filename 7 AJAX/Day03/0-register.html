@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <p>
+	  用户名称：<input type="text" id="uname" onblur="check_uname()">
+	  <span id="uname-show"></span>
+	</p>
+	<p>
+	  用户密码：<input type="password" id="upwd">
+	</p>
+	<p>
+	  用户邮箱：<input type="email" id="uemail">
+	</p>
+	<p>
+	  联系方式：<input type="text" id="utel">
+	</p>
+	<p>
+	  真实姓名：<input type="text" id="user_name">
+	</p>
+	<p>
+	  用户性别：<select id="ugender">
+	      <option value="0">女</option>
+	      <option value="1">男</option>
+	      <option value="2">保密</option>
+	  </select>
+	</p>
+	<p>
+	   <input type="button" onclick="user_register()" value="注册">
+	</p>
+
+<script src="common.js"></script>
+<script>
+   var isRegister=true;//允许注册
+   function check_uname(){
+     //1.创建xhr
+	   var xhr=createXhr();
+	 //2.监听
+	   xhr.onreadystatechange=function(){
+	      if(xhr.readyState==4&&xhr.status==200){
+		     var result=xhr.responseText;
+			 if(result=="1"){
+			    $("uname-show").innerHTML="用户名已存在";
+               isRegister=false;
+			 }else{
+			    $("uname-show").innerHTML="用户名可用";
+			   isRegister=true;
+			 }
+		  }
+	   }
+	 //3.打开连接 （get方式）
+	   var uname=$("uname").value;
+	   xhr.open("get","check_uname.php?uname="+uname,true);
+	 //4.发送请求
+	   xhr.send(null);
+  }
+
+
+  function user_register(){
+   if(isRegister){
+     //1.创建异步xhr
+	 var xhr=createXhr();
+	 //2.监听事件
+	 xhr.onreadystatechange=function(){
+	   if(xhr.readyState==4&&xhr.status==200){
+	      var result=xhr.responseText;
+		  alert(result);
+	   }
+	 }
+	 //3.打开连接
+	 xhr.open("post","0-register.php",true);
+     //增加：设置请求头信息
+	 xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	 //4.发送请求
+     var uname=$("uname").value;
+	 var upwd=$("upwd").value;
+	 var uemail=$("uemail").value;
+	 var utel=$("utel").value;
+	 var user_name=$("user_name").value;
+	 var ugender=$("ugender").value;
+     var msg="uname="+uname+"&upwd="+upwd+"&uemail="+uemail+"&utel="+utel+"&user_name="+user_name+"&ugender="+ugender;
+
+	 xhr.send(msg);
+   }else{
+	   alert("注册失败，请检查注册信息");
+  }
+}
+
+ 
+</script>
+ </body>
+</html>

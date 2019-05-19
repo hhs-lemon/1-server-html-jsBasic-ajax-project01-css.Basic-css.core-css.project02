@@ -1,0 +1,21 @@
+1.动画兼容低版本浏览器
+  通过加浏览器前缀的方式来实现。
+  firefox:-moz-
+  IE:-ms-
+  chrome&safari:-webkit-
+  opera:-o-
+  ex:
+  @-moz-keyframes 动画名称{
+    /*定义关键帧*/
+  }
+
+  @-webkit-keyframes 动画名称{
+    /*定义关键帧*/
+  }
+
+project==============================
+1.创建project文件夹，在project中，创建css文件夹，将所有网页的css文件存放到css文件夹中。
+2.将所有图片资源“img文件夹”存在到project文件夹中。
+3.在project文件中新建header.html网页，完成头部布局及样式
+
+4.新建index.html，在index.html引入header.html作为网页的头部（iframe）。

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="common.js"></script>
+ </head>
+ <body>
+    <p>
+	  用户名称：<input type="text" name="uname" id="uname" onblur="btn_blur()" onfocus="btn_focus()">
+	  <span id="show-uname"></span>
+	</p>
+	<!--完成密码框失去焦点和获取焦点时的提示-->
+	<p>
+	  用户密码：<input type="password" onblur="pwd_blur()" onfocus="pwd_focus()">
+	  <span id="show-pwd"></span>
+	</p>
+	<input type="button" value="登录">
+	<script>
+	   function btn_focus(){
+	      $("show-uname").innerHTML="请输入6-12位用户名称！";
+	   }
+	   function btn_blur(){
+		  var uname=$("uname").value;
+		  //判断用户名是否为空
+          if(uname==""){
+	        $("show-uname").innerHTML="用户名不能为空！";
+		  }else{
+		    $("show-uname").innerHTML="通过！";
+		  }
+	   }
+	   //以下是密码框失去焦点和获取焦点
+	   function pwd_blur(){
+	     $("show-pwd").innerHTML="用户密码不能为空";
+	   }
+	   function pwd_focus(){
+	     $("show-pwd").innerHTML="请输入6-18的密码";
+	   }
+	</script>
+ </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="common.js"></script>
+ </head>
+ <body onload="btn_onload()">
+    <p>
+	  用户名称：<input type="text" id="uname">
+	  <span id="show-uname"></span>
+	</p>
+
+	<input type="button" value="登录">
+	<script>
+	   function btn_onload(){
+	      $("show-uname").innerHTML="请输入6-12位用户名称！";
+	   }
+
+	</script>
+ </body>
+</html>

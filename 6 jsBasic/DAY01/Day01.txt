@@ -1,0 +1,165 @@
+1.表单元素
+ 1.input元素
+  1.隐藏域和文件选项框
+    1.隐藏域
+      <input type="hidden">
+      要提交给服务器的数据，但是不想展示给用户看可以放在隐藏域中。
+    2.文件选择框
+      <input type="file">
+      注意：
+      1.method属性的值必须为post
+      2.enctype属性的值必须为multipart/form-data 
+ 2.textarea元素
+  1.作用
+    允许输入多行数据的文本框。
+  2.语法
+    标记：<textarea></textarea>
+    属性：
+        name:定义控件名称，提供服务器使用
+	readonly:只读，无值的属性
+	cols:指定文本域的列数，即一行能显示多少英文字符（中文字符减半）
+	rows:指定文本域的行数，即默认显示多少行数据，超出rows的话会出现滚动条。
+ 3.select元素
+  1.语法
+     1.<select></select>
+       作用：在页面中表示一个选项框
+     2.<option></option>
+      作用：表示选项
+  2.属性
+    1.select属性
+      1.name 定义选项框的名称
+      2.size 定义默认显示选项的数量，默认值为1
+      3.multiple 设置多选，无值属性
+                 只有滚动列表支持多选。
+    2.option属性
+      1.value 定义选项的值
+      2.selected 设置默认选中项，无值属性
+ 4.其它元素
+  1.label元素
+    作用：关联表单控件的文本
+    标记：<label></label>
+    属性：for 
+          设置要与该元素关联的表单控件的id值
+  2.为控件分组
+    <fieldset></fieldset> 为控件分组
+    <legend></legend> 为分组指定标题
+  3.浮动框架
+    作用：允许在一个网页中，再引入其他的网页
+    语法：<iframe></iframe>
+    属性：
+      1.src 要引入的网页路径（url）
+      2.frameborder 浮动框架的边框，默认值1
+      3.width 宽度
+      4.height 高度
+    练习：
+      新建footer.html网页，在网页中写上版权说明，在index.html网页中通过iframe引入footer.html。
+2.新表单元素
+  1.什么是新表单元素
+    在HTML5版本中新提出来的控件。
+  2.详解
+    1.电子邮件类型
+      <input type="email">
+      作用：表单在提交时，会验证数据是否符合email的规范(@)
+    2.搜索类型
+      <input type="search">
+      作用：提供了快速清除功能
+    3.url类型
+      <input type="url">
+      作用：提交时，验证数据是否符合url的规范（绝对路径的规范）
+    4.电话号码类型
+      <input type="tel">
+      作用：在移动端设置中，显示“拨号键盘”
+    5.数字类型
+      <input type="number">
+      作用：只能接收数字，并可以灵活调整数字的值
+      属性：
+         value:控制的值
+	 min:能够接收的最小值
+	 max:能够接收的最大值
+	 step:每次调整数字时的变化范围
+    6.范围类型
+      <input type="range">
+      作用：提供一个滑块组件，允许用户选取指定范围的值。
+      属性：
+         value:控制的值，默认值。
+	 min:能够接收的最小值
+	 max:能够接收的最大值
+	 step:范围的步长
+    7.颜色类型
+      <input type="color">
+      作用：提供一个颜色拾取控件
+    8.日期类型
+      <input type="date">
+      作用：提供一个日期选择控件
+    9.周类型
+      <input type="week">
+    10.月份类型
+      <input type="month">
+
+3.JavaScript概述
+  1.什么是javascript?
+    JavaScript，简称js,是一种运行于js解释器/引擎中脚本语言。
+    运行环境：
+       1.独立安装的js解释器(node)
+       2.嵌入在浏览器内核中的js解释器
+  2.js的发展史
+    1.1992年Nombas公司为自己的软件开发了一款脚本语言ScriptEase,可以运行在浏览器中。
+    2.1995年网景开发了另一款脚本语言LiveScript,后期更名为JavaScript
+    3.1996年Microsoft在IE3.0版本克隆版本JSscript
+    4.1997年提交给ECMA(欧洲计算机制造商联合会)，定义了ECMAScript(ES5,ES6)
+  3.JS的组成
+    由以下三部分组成：
+    1.核心 (ECMAScript)
+    2.DOM(Document Object Model)
+      文档对象模型
+      提供了一组允许操作页面元素的函数和属性。
+    3.BOM(Browser Object Model)
+      浏览器对象模型
+      提供了一组允许操作浏览器的函数和属性。
+  4.js的特点
+    1.语法类似于c,java
+    2.无需编译，由js解释器直接运行
+    3.弱类型语言
+    4.面向对象的
+4.JavaScript的基础语法
+  1.使用js
+    1.运行环境搭建
+      1.独立安装js解释器（node）
+        1.在命令行界面输入node 按回车键
+	2.输入console.log("打印输出的内容");
+      2.使用浏览器内核嵌入js的解释器
+        浏览器内核负责内容的渲染由两部分组成：
+	   1.内容排版引擎-解析HTML和CSS
+	   2.脚本解释引擎-解析javascript
+	1.直接在浏览器中输入js脚本
+	   console.log();
+	2.将JS脚本嵌入在HTML页面中执行
+	  1.HTML的元素的事件执行js脚本
+	    事件：onclick-鼠标单击时要执行的操作
+	    ex:
+	    <input type="button" value="你点我试试？" onclick="console.log('点你咋地？！')">
+	  2.在<script>标记中编写脚本并执行
+	    网页的任意位置处，嵌入一对<script></script>标记，
+	    在<script>中编写js代码。
+	    js的输出方式：
+	      控制台输出：console.log();
+	      弹出框输出：alert();
+	      网页中输出：document.write();
+	      
+          3.使用外部脚本文件(.js为后缀)
+	    1.创建脚本文件
+	    2.在文件中编写js脚本
+	    3.在使用的网页中引入
+	      <script src="js文件的路径">
+	         //引入外部的js文件后，这对scirpt标记中不能再写js脚本
+	      </script>
+	   
+	   练习：
+	      1.创建网页，在网页中添加一对<script>标记，以3级标题打印输出自己的姓名；
+	      2.创建一个按钮，为按钮添加单击事件，在控制台打印输出自己的年龄；
+	      3.使用外部js文件的方式，在网页中以2级标题输出笔记本名称和价格。
+
+       
+  
+
+       

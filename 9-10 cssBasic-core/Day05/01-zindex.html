@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+     div{
+	   width:200px;
+	   height:200px;
+	   position:absolute;
+	   left:0;
+	   top:0;
+
+	 }	
+	 .c1{
+	   background:blue;
+	   z-index:10;
+	 }
+	 .c2{
+	   background:red;
+	   left:50px;
+	   top:50px;
+	   z-index:5;
+	 }
+	 .c3{
+	   left:100px;
+	   top:100px;
+       background:yellow;
+	 }
+     .c4{
+	   background:green;
+	   top:300px;
+	   z-index:10;
+	 }
+	 .c5{
+	   background:black;
+	   top:50px;
+	   left:50px;
+	 }
+  </style>
+ </head>
+ <body>
+    <div class="c1"></div>
+	<div class="c2"></div>
+	<div class="c3"></div>
+	<div class="c4">
+	   <div class="c5"></div>
+	</div>
+ </body>
+</html>
+<!-- 
+定位+层叠：图像分析
+全绝对定位
+123：偏移不同 依次层叠
+4包5 ：4下偏300！5绝对定位:4基础上左偏50
+ -->

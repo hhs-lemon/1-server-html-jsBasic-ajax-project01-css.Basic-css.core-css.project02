@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+     #container{
+	   border:1px solid blue;
+	   display:flex;
+	   height:300px;
+	   width:700px;
+	 /*  flex-direction:row;
+	   flex-wrap:wrap;*/
+	   flex-flow:row wrap;
+	   justify-content:space-between;
+	   align-items:baseline;
+
+	 }
+	 .c1,.c2,.c3{
+	   width:200px;
+	   height:200px;
+	 }
+	 .c1{
+	   background:red;
+	 }
+	 .c2{
+	   background:yellow;
+	 }
+	 .c3{
+	 	height:100px;
+	   background:blue;
+	 }
+  </style>
+ </head>
+ <body>
+    <div id="container">
+	   <div class="c1"></div>
+	   <div class="c2"></div>
+	   <div class="c3"></div>
+	</div>
+ </body>
+</html>
+<!-- 
+弹性布局四属性：宽高 方向+换行 对齐方式x2
+父变容器：display:flex; 宽高 方向+换行 对齐方式 对齐方式
+子：  宽高
+ -->

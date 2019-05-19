@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>注册页</title>
+ </head>
+ <body>
+    <form action="01-register.php" method="post">
+	   <p>
+	     登录名称：<input type="text" id="uname" name="uname" onblur="check_uname()">
+		 <span id="uname-show"></span>
+	   </p>
+	   <p>
+	     登录密码：<input type="password" name="upwd" id="upwd" onblur="check_upwd()">
+		 <span id="upwd-show"></span>
+	   </p>
+	   <p>
+	     重复密码：<input type="password" name="cpwd" id="cpwd" onblur="check_cpwd()">
+		 <span id="cpwd-show"></span>
+	   </p>
+	   <p>
+	     电子邮箱：<input type="email" name="email">
+	   </p>
+	   <p>
+	     联系方式：<input type="text" name="phone">
+	   </p>
+	   <p>
+	     用户姓名：<input type="text" name="user_name">
+	   </p>
+	   <p>
+	     用户性别：
+		  <select name="gender">
+		    <option value="0">女</option>
+		    <option value="1">男</option>
+		    <option value="2">保密</option>	
+		  </select>
+	   </p>
+	   <p>
+	     <input type="submit" value="注册">
+	   </p>
+	</form>
+
+	<script src="common.js"></script>
+	<script>
+	  //1.验证用户名是否已存在用异步方式
+	  function check_uname(){
+	     var xhr=createXhr();
+		 xhr.onreadystatechange=function(){
+		   if(xhr.readyState==4&&xhr.status==200){
+		     var str=xhr.responseText;
+             $("uname-show").innerHTML=str;
+		   }
+		 }
+		//获取用户名输入框的值
+		var uname=$("uname").value;
+		xhr.open("get","checkUname.php?uname="+uname,true);
+
+		xhr.send(null);
+	  }
+      //验证登录密码框不能为空
+      function check_upwd(){
+		 var upwd=$("upwd").value;
+		 if(upwd==""){
+		   $("upwd-show").innerHTML="密码不能为空！";
+		 }else{
+		   $("upwd-show").innerHTML="通过";
+		 }
+	  }
+	  //验证重复密码和登录密码必须一致
+	  function check_cpwd(){
+		 var upwd=$("upwd").value;
+	     var cpwd=$("cpwd").value;
+	     if(upwd==cpwd){
+		    $("cpwd-show").innerHTML="通过";
+		 }else{
+		    $("cpwd-show").innerHTML="两次密码不一致！";
+		 }
+	  }
+
+	</script>
+ </body>
+</html>

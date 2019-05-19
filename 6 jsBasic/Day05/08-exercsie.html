@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <script>
+	   /*
+	  1.声明一个整数数组，随意定义数字。
+	  2.页面上添加两个按钮，一个“升序”按钮，一个“降序”按钮。
+	  3.点击升序按钮时，数组按升序排序，并打印在控制台。
+	  4.点击降序按钮时，数组按降序排序，并打印在控制台。
+	   */
+	   var arr=[74,15,68,23,67];
+	   function goUp(){
+	      arr.sort(
+		    function(a,b){
+			  return a-b;
+			}
+		  );
+		  console.log(arr);
+	   }
+	   function goDown(){
+	     arr.sort(
+		   function(a,b){
+		     return b-a;
+		   }
+		 );
+		 console.log(arr);
+	   }
+	 </script>
+     <input type="button" onclick="goUp()" value="升序">
+	 <input type="button" onclick="goDown()" value="降序"> 
+ </body>
+</html>

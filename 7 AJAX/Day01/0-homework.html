@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	   根据省份信息，查询城市列表
+        1.创建一个一维数组，保存几个省份名称；
+	    2.创建一个二维数组，保存上面省份所对应的城市信息；
+	    3.创建一个函数，接收一个省份的名称做参数，打印该省份所对应的城市信息。
+	  */
+	  function showCity(){
+	      //创建一位数组保存省份信息
+		    var province=["河北","湖北","河南","山东"];
+	      //创建二维数组保存城市信息
+		    var city=[
+			   ["石家庄","保定","秦皇岛"],
+			   ["武汉","黄冈","荆州"],
+			   ["郑州","洛阳","开封"],
+			   ["济南","烟台","青岛"]
+			];
+		  //接收用户输入的省份
+		   var input=prompt("请输入一个省份名称：");
+		   var index=-1;//保存省份的下标
+		   for(var i=0;i<province.length;i++){
+		       if(input==province[i]){
+			      index=i;//将查询到的省份下标赋值给index,然后将index带入到city数组中去查询城市信息
+				  break;
+			   }
+		   }
+           if(index==-1){
+		       alert("没找到您要查询的省份");
+		   }else{
+		      alert(city[index]);
+		   }
+	  }
+	  showCity();
+	</script>
+ </body>
+</html>

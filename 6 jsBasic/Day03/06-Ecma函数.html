@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <script>
+	   function showURI(){
+	     var kw=prompt("输入一个关键词：");
+		 var url="https://www.baidu.com/s?wd="+kw;
+		 url=encodeURI(url);//转码后
+		 console.log(url);
+	   }
+	   showURI();
+
+	   //%E6%89%8B%E6%9C%BA
+	   //%E4%BD%B3%E8%83%BD
+	   function testDecodeURI(){
+	     var kw="%E6%89%8B%E6%9C%BA";
+		 var nkw=decodeURI(kw);
+		 console.log(nkw);
+	   }
+	   testDecodeURI();
+	 </script>
+ </body>
+</html>

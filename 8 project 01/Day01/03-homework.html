@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+     <input type="button" onclick="loadUser()" value="加载用户信息">
+	 <div id="show-user"></div>
+     <table border="1px" width="600px">
+	    <thead>
+		  <tr>
+		     <th>用户名</th>
+		     <th>邮箱</th>
+		     <th>姓名</th>
+		     <th>操作</th>
+		  </tr>
+		</thead>
+		<tbody id="myBody"></tbody>
+	 </table>
+
+	 <script src="common.js"></script>
+	 <script>
+	    function loadUser(){
+		  //1.创建xhr
+		  var xhr=createXhr();
+		  //2.监听
+		  xhr.onreadystatechange=function(){
+		    if(xhr.readyState==4&&xhr.status==200){
+			  var res=xhr.responseText;
+			  var users=JSON.parse(res);
+			  // console.log(users);
+			 //循环遍历users数组
+			 var html="";
+			for(var i=0;i<users.length;i++){
+			     var user=users[i];
+//$("show-user").innerHTML+=user.uname+"<br>";
+            html+="<tr>";
+			  html+="<td>"+user.uname+"</td>";
+			  html+="<td>"+user.email+"</td>";
+			  html+="<td>"+user.user_name+"</td>";
+			  html+="<td>";
+			    html+="<a href='#'>删除</a>";
+				html+="<a href='#'>修改</a>";
+			  html+="</td>";
+			html+="</tr>";
+			 }
+			 $("myBody").innerHTML=html;
+			}  
+		  }
+		  //3.打开连接
+		  xhr.open("get","03-loadUser.php",true);
+		  //4.发送请求
+		  xhr.send(null);
+		}
+	 </script>	
+ </body>
+</html>

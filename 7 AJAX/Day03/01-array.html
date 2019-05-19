@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+   <input type="button" onclick="loadUser()" value="获取数据">
+
+  <script src="common.js"></script>
+  <script>
+  
+
+
+  function loadUser(){
+     //1.创建异步xhr
+	 var xhr=createXhr();
+	 //2.监听事件
+	 xhr.onreadystatechange=function(){
+	   if(xhr.readyState==4&&xhr.status==200){
+	      var result=xhr.responseText;
+		  var res=JSON.parse(result);
+		  console.log(res);
+		  console.log(res.name);
+		  
+	   }
+	 }
+	 //3.打开连接
+	 xhr.open("get","01-array.php",true);
+	 //4.发送请求
+	 xhr.send(null);
+}
+
+ 
+</script>
+ </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+    <script>
+	  /*
+	  练习：在控制台打印以下图像
+	  *
+	  **
+	  ***
+	  ****
+	  *****
+	  */
+	  function printTri(){
+	    for(var line=1;line<=5;line++){
+			var msg="";
+		   for(var star=1;star<=line;star++){
+		       msg+="*";
+		   }
+		   console.log(msg); //打印的是每一行的*
+		}
+	  }
+	//  printTri();
+
+	  //练习2：打印99乘法表
+	  function print99(){
+	     for(var i=1;i<=9;i++){
+			 var msg="";
+		    for(var j=1;j<=i;j++){
+			   msg+=(j+"*"+i+"="+(i*j)+"\t");
+			}
+			console.log(msg);
+		 }
+	  }
+     print99();
+	</script>
+ </body>
+</html>

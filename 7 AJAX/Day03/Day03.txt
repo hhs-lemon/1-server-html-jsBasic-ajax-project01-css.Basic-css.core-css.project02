@@ -1,0 +1,92 @@
+练习：
+  1.用户名称输入框失去焦点时，验证用户名是否被占用？
+    1.在php中接收前端传递过来的uname,根据uname去数据库查询，看当前用户名是否已存在，并给出响应。
+  ====================================
+1.在php中有个数组，响应回前端
+  $array=["习大大","川普","金三胖"];
+2.JS对象数据格式
+  ex:
+   数组：
+   var TOM=[];
+       TOM[0]="汤姆";
+       TOM[1]=20;
+       TOM[2]="180cm";
+       TOM[3]="75KG";
+   改版：
+   var TOM=[];
+       TOM["name"]="汤姆";
+       TOM["age"]=20;
+       TOM["height"]="180cm";
+       TOM["weight"]="75KG";
+       
+   1.js对象数据格式
+     语法：
+     var 对象名={
+         属性：值,
+	 属性：值,
+	 属性：值
+     }
+     ex:
+     var TOM={
+         name:"汤姆",
+	 age:20,
+	 height:"180cm",
+	 weight:"75kg"
+     }
+     取对象值的时候，对象名.属性名称 就可以
+     获取TOM的年龄：console.log(TOM.name);
+     练习：
+       创建一个对象，笔记本电脑
+          1.包含三个属性
+	    name:computer
+	    price:6800
+	    model:MacBook Air
+	  2.在控制台分别将以上三个属性值打印出来
+   2.JSON
+     1.什么是JSON？
+       JavaScript Object Notation
+          js       对象  表现形式 
+       js对象表示法，即以js对象的数据格式表现出来的字符串。
+     2.JSON的语法
+       1.JSON对象
+         1.用一对{}来表示一个对象
+	 2.对象的属性名称，必须用""引起来（单引号不可以），值如果是字符串的话，必须用""引起来。
+	 ex:
+	 普通字符串：var tom='汤姆';
+	 JSON字符串：var tom='{"name":"汤姆","age":20}'
+      2.JSON数组
+        1.JSON数组：
+	  '["TOM","lucy","lilei"]'
+	2.'[
+	    { //第一个对象TOM的信息
+	      "name":"TOM",
+	      "age":20,
+	      "height":"180cm"
+	    },
+	    { //第一个对象lucy的信息
+	      "name":"lucy",
+	      "age":19,
+	      "height":"160cm"
+	    },
+	    { //第一个对象lilei的信息
+	      "name":"lilei",
+	      "age":21,
+	      "height":"175cm"
+	    }
+
+	]'
+
+   3.在php中，可以直接将数组转换为JOSN格式字符串。
+     语法：通过json_encode()将数组转换成json字符串，并返回转换后的结果。
+   4.在网页中将接收回来的json字符串进行解析
+     使用JSON.parse()来将JSON字符串解析js对象/数组。
+   练习：
+     1.新建loadUser.php文件，在php中将用户表中的所有数据查询出来并以json字符串方式响应给前端。
+     2.新建网页loadUser.html,在网页中添加一个按钮，点击按钮时在控制台打印出用户信息。
+     
+       
+
+
+
+
+

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+      <script>
+	    /*
+		  冒泡排序
+		*/
+		var array=[56,84,23,15,90,67];
+		console.log(array);
+        for(var i=1;i<array.length;i++){
+		   for(var j=0;j<array.length-i;j++){
+		      if(array[j]>array[j+1]){
+			     array[j]^=array[j+1];
+				 array[j+1]^=array[j];
+				 array[j]^=array[j+1];
+			  }
+		   }
+		}
+       console.log(array);
+	  </script>
+ </body>
+</html>
