@@ -12,16 +12,15 @@
 	   color:black;
 	   text-decoration:none;
 	 }
-	 a:hover{
-	   color:red;
-	 }
 	 a:active{
 	   color:orange;
 	 }
 	 a:visited{
 	   color:green;
 	 }
-
+     a:hover{
+         color:red; // active、visited和hover，谁放最后谁的颜色生效！！
+     }
 	 input{
 	   color:gray;
        font-style:italic;
@@ -30,20 +29,21 @@
 	   font-style:normal;
 	 }
 	 input:focus{
+       font-style:normal;
 	   color:red;
 	 }
 	 #uname:focus{
 	   color:blue;
 	 }
-      
+
      div p #s1{
 	   color:blue;
 	 }
-	
+
 	 #s1{
 	   color:red;
 	 }
-	
+
   </style>
  </head>
  <body>

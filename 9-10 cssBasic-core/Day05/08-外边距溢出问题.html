@@ -25,20 +25,24 @@
 	  background:yellow;
 	  margin-top:50px;
 	}
-	#d2:before{
-	   content:"";
-	   display:table;
-	}
+    .over-margin:before{
+     content:"";
+     display:table;
+    }
+	/*#d2:before{*/
+	   /*content:"";*/
+	   /*display:table;*/
+	/*}*/
   </style>
  </head>
  <body>
     <div id="d1"></div>
-	<div id="d2">
+	<div id="d2" class="over-margin">
 	  <div id="d3"></div>
 	</div>
  </body>
 </html>
-<!-- 
+<!--
 外边距溢出问题：
 分析：看布局——d3外边距不要溢出父d2：在父d2前用css的方式加空table标签
 #d2:before{
